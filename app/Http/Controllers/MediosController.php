@@ -43,14 +43,14 @@ class MediosController extends Controller
     public function deleteMedio($id)
     {
         $medio = medios::findOrFail($id);
-        $imagePath = 'assets/uploads/' . $medio->nombre;
+        //$imagePath = public_path('assets/uploads/') . $medio->nombre;
 
-        //if (Storage::exists($imagePath)) {
-            Storage::delete($imagePath);
+        if (Storage::disk('uploads')->exists($medio->nombre)) {
+            Storage::disk('uploads')->delete($medio->nombre);
             $medio->delete();
             return redirect('medios')->with('success', '¡Medio eliminado correctamente!');
-        //} else {
-        //    return redirect('medios')->with('error', 'El medio no existe en el servidor');
-        //}
+        } else {
+           return redirect('medios')->with('error', 'El medio no existe en el servidor');
+        }
     }
 }
