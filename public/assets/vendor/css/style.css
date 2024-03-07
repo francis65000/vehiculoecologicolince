@@ -68,3 +68,12 @@ body {
     height: 130px; /* Establece la altura deseada */
     object-fit: cover; /* Escala la imagen para cubrir todo el contenedor */
 }
+
+.menuBackend .menu-link{
+    color: white;
+}
+
+.menuBackend .menu-link:hover{
+    background-color: rgb(0, 101, 156);
+    color: white;
+}

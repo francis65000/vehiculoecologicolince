@@ -7,7 +7,7 @@
 
     <div class="menu-inner-shadow"></div>
 
-    <ul class="menu-inner py-1">
+    <ul class="menu-inner py-1 menuBackend">
         <li class="menu-item">
             <a href="{{url('/')}}" class="menu-link">
                 <i class="menu-icon fa-solid fa-house"></i>

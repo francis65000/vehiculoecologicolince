@@ -30,7 +30,7 @@
         </div>
     </div>
     <br>
-    <div class="card mx-3">
+    <div class="card mx-3 mb-3">
         <div class="card-body">
             <table class="table table-striped">
                 <h2><i class="fa-solid fa-image"></i> Biblioteca de medios</h2>
