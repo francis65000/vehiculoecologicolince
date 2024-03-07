@@ -22,12 +22,15 @@ Route::middleware('auth')->group(function () {
     });
     //ENTRADAS DEL BLOG
     Route::get('/entradas', [BlogController::class, 'backendVerPosts'])->name('backendBlog.show');
-    Route::get('/nueva-entrada', [BlogController::class, 'newEntrada'])->name('backendBlog.new');
-
+    Route::get('/nueva-entrada', [BlogController::class, 'newEntrada']);
+    Route::post('/insertar-entrada', [BlogController::class, 'addNewPost']);
+    Route::get('/editar-entrada/{id}', [BlogController::class, 'editMedio'])->name('medios.edit');
+    
     //MEDIOS
     Route::get('/medios', [MediosController::class, 'viewMedios'])->name('backendMedios.view');
     Route::post('/addMedios', [MediosController::class, 'newMedio']);
     Route::delete('/medios/{id}', [MediosController::class, 'deleteMedio'])->name('medios.delete');
+    
 
     //VEHICULOS
 

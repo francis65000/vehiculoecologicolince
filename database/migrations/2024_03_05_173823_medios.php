@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('medios', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('descripcion');
+            $table->string('descripcion')->nullable();
             $table->timestamps();
         });
     }

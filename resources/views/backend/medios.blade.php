@@ -6,7 +6,6 @@
     <!--Mostrando la tabla con las entradas que hay-->
     <h1 class="p-4">Medios</h1>
     <div class="card mx-3">
-        
         <div class="card-body">
             <form action="{{ url('addMedios') }}" method="post" enctype="multipart/form-data" class="row g-3">
                 @csrf
@@ -20,7 +19,7 @@
                 <!-- Segunda columna -->
                 <div class="col-md-6">
                     <label for="descripcion" class="form-label">Descripción (Opcional)</label>
-                    <input type="text" name="descripcion" class="form-control" placeholder="Descripción">
+                    <input type="text" name="descripcion" class="form-control" placeholder="Descripción" maxlength="50">
                 </div>
                 <!-- Botón de envío -->
                 <div class="col-12">

@@ -1,10 +1,10 @@
 @extends('comunes.masterBackend')
 
-@section('title', 'Nueva Entrada')
+@section('title', 'Editando entrada')
 
 @section('content')
     <!--Mostrando la tabla con las entradas que hay-->
-    <h1 class="p-4">Añadir nueva entrada</h1>
+    <h1 class="p-4">Editando entrada</h1>
     <div class="card mx-3">
         <div class="card-header d-flex align-items-center justify-content-between">
 

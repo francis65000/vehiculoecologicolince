@@ -15,8 +15,9 @@ return new class extends Migration
         Schema::create('blog', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
-            $table->string('descripcion');
+            $table->text('descripcion')->nullable();
             $table->unsignedBigInteger('id_imagen');
+            $table->date('fecha_publicacion');
             $table->timestamps();
 
             // Definición de la clave foránea
