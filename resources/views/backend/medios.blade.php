@@ -47,6 +47,7 @@
                                     <form action="{{ route('medios.delete', ['id' => $imagen->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
+                                        <p>Nombre: {{$imagen->nombre}}</p>
                                         <button class="btn btn-danger" type="submit"><i class="menu-icon fa-solid fa-xmark"></i>Eliminar</button>
                                     </form>
                                 </div>
