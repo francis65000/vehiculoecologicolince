@@ -4,21 +4,39 @@
 
 @section('content')
     <!--Mostrando la tabla con las entradas que hay-->
+    <h1 class="p-4">Medios</h1>
     <div class="card mx-3">
-        <h1 class="p-4">Medios</h1>
+        
         <div class="card-body">
-            <form action="{{ url('addMedios') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ url('addMedios') }}" method="post" enctype="multipart/form-data" class="row g-3">
                 @csrf
-                <input type="file" name="image" class="form-control" accept="image/jpeg, image/png, image/jpg, image/gif" required>
-                <label for = "descripcion">Descripción</label>
-                <input type="text" name="descripcion" class="form-control" placeholder="Descripción">
-                <button type="submit" class="btn btn-primary m-3"><i class="menu-icon fa-solid fa-plus"></i>Subir archivos</button>
+                <h2><i class="fa-solid fa-arrow-up-from-bracket"></i> Subir medio</h2>
+                <!-- Primera columna -->
+                <div class="col-md-6">
+                    <label for="image" class="form-label">Seleccionar archivo (Tamaño máximo 1GB)</label>
+                    <input type="file" name="image" class="form-control" accept="image/jpeg, image/png, image/jpg, image/gif" required>
+                    <label for="image" class="form-label">Formatos aceptados: jpeg, jpg, png, gif</label>
+                </div>
+                <!-- Segunda columna -->
+                <div class="col-md-6">
+                    <label for="descripcion" class="form-label">Descripción (Opcional)</label>
+                    <input type="text" name="descripcion" class="form-control" placeholder="Descripción">
+                </div>
+                <!-- Botón de envío -->
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary m-3"><i class="menu-icon fa-solid fa-plus"></i> Subir archivos</button>
+                </div>
             </form>
-
+        </div>
+    </div>
+    <br>
+    <div class="card mx-3">
+        <div class="card-body">
             <table class="table table-striped">
+                <h2><i class="fa-solid fa-image"></i> Biblioteca de medios</h2>
                 <tbody>
                     @foreach ($medios as $index => $imagen)
-                        @if ($index % 5 == 0)
+                        @if ($index % 6 == 0)
                             </div><div class="row mt-4">
                         @endif
                         <div class="col-md-2">
