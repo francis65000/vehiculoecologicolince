@@ -1,25 +1,46 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VehiculosController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\MediosController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+/*////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////  RUTAS DEL FRONTEND  //////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////*/
 
-Route::get('/', function () {
-    return view('front.inicio');
+Route::get('/', [VehiculosController::class, 'verVehiculos'])->name('vehiculos.show');
+
+/*////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////  RUTAS DEL BACKEND  //////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////*/
+Route::middleware('auth')->group(function () {
+    Route::get('/escritorio', function () {
+        return view('backend.home');
+    });
+    //ENTRADAS DEL BLOG
+    Route::get('/entradas', [BlogController::class, 'backendVerPosts'])->name('backendBlog.show');
+    Route::get('/nueva-entrada', [BlogController::class, 'newEntrada'])->name('backendBlog.new');
+
+    //MEDIOS
+    Route::get('/medios', [MediosController::class, 'viewMedios'])->name('backendMedios.view');
+    Route::post('/addMedios', [MediosController::class, 'newMedio']);
+    Route::delete('/medios/{id}', [MediosController::class, 'deleteMedio'])->name('medios.delete');
+
+    //VEHICULOS
+
+    //DORSALES
+
+    //CONFIGURACION
 });
 
+/*////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////  OTRAS RUTAS GENERADAS  //////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////*/
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('backend.home');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -28,4 +49,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+Route::delete('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
+require __DIR__ . '/auth.php';

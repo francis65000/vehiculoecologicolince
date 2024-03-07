@@ -36,7 +36,7 @@
 
     <!-- Font awesome CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css" crossorigin="anonymous">
-    
+
     <!-- Helpers -->
     <script src="{{ asset('assets/vendor/js/helpers.js') }}"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
@@ -52,7 +52,7 @@
                 @include('comunes.menu')
             </div>
         </div>
-        <div class="row mt-3">
+        <div>
             @yield('content')
         </div>
     </div>
@@ -81,6 +81,23 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <!--Slider-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+
+    <!--<script>
+        $(document).ready(function(){
+            // Inicializar el carrusel
+            $('.carousel').carousel();
+    
+            // Cambiar de imagen cada 4 segundos
+            setInterval(function(){
+                $('.carousel').carousel('next');
+                console.log('Cambiando de imagen');
+            }, 5000); // 4000 milisegundos = 4 segundos
+        });
+    </script>-->
 </body>
 
 </html>
