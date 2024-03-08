@@ -51,4 +51,35 @@ class BlogController extends Controller
         $entrada = Blog::find($id);
         return view('backend.editBlog', compact('medios', 'entrada'));
     }
+
+    //METODO POST PARA ACTUALIZAR UNA ENTRADA DE BLOG
+    public function updateMedio(Request $request, $id)
+    {
+        //comprobar que los campos no estén vacíos
+        $request->validate([
+            'titulo' => 'required',
+            'descripcion' => 'required',
+            'id_imagen' => 'required',
+            'fecha_publicacion' => 'required'
+        ]);
+
+        //actualizar la entrada
+        $entrada=Blog::find($id);
+        $entrada->titulo=$request->titulo;
+        $entrada->descripcion=$request->descripcion;
+        $entrada->id_imagen=$request->id_imagen;
+        $entrada->fecha_publicacion=$request->fecha_publicacion;
+        $entrada->save();
+
+        //redirigir a la página de entradas
+        return redirect('entradas')->with('success', '¡Datos actualizados correctamente!');
+    }
+
+    //METODO PARA BORRAR UNA ENTRADA DE BLOG
+    public function deleteMedio(Request $request, $id)
+    {
+        $entrada=Blog::find($id);
+        $entrada->delete();
+        return redirect('entradas')->with('success', '¡Entrada eliminada correctamente!');
+    }
 }

@@ -28,7 +28,7 @@
                             </td>
                             <td>
                                 <a href="{{ url('/editar-entrada/'.$post->id) }}" class="btn btn-primary"><i class="menu-icon fa-solid fa-pen-to-square"></i>Editar</a>
-                                <a href="#" class="btn btn-danger"><i class="menu-icon fa-solid fa-xmark"></i>Eliminar</a>
+                                <a href="{{ url('/eliminar-entrada/'.$post->id) }}" class="btn btn-danger"><i class="menu-icon fa-solid fa-xmark"></i>Eliminar</a>
                             </td>
                         </tr>
                     @endforeach

@@ -125,7 +125,7 @@
             <form id="delete-form" action="{{ url('logout') }}" method="post">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger">Cerrar sesión</button>
+                <button type="submit" class="btn btn-danger"><i class="menu-icon fa-solid fa-right-from-bracket"></i>Cerrar sesión</button>
             </form>
         </li>
 

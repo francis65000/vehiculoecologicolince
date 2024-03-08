@@ -19,7 +19,9 @@
                         <div data-i18n="Dashboards">Seleccionar Imágen</div>
 
                     </a>
-                    <p id="informacion"></p>
+                    <!--AREA DE INFORMACION DE SI SE HA SELECCIONADO UNA IMAGEN-->
+                    <div class="col-3 mt-4" id="informacion"></div>
+                    <!--FIN AREA-->
                     <ul class="menu-sub" id="menuUbicaciones" style="display: none;">
                         <!-- MENU PENDIENTE DE ENLAZAR -->
                         <li class="menu-item">
@@ -37,7 +39,7 @@
                                             <div class="m-2 text-center">
                                                 <input type="radio" name="id_imagen" id="{{ $imagen->id }}"
                                                     value="{{ $imagen->id }}" required
-                                                    onclick="mostrarOcultarUbicaciones()">
+                                                    onclick="mostrarOcultarUbicacionesCheck()">
                                                 {{ $imagen->nombre }}
                                             </div>
                                         </div>
@@ -64,7 +66,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <label for="descripcion">Descripción:</label>
-                            <textarea name="descripcion" id="descripcion" class="form-control h-100"></textarea>
+                            <textarea name="descripcion" id="descripcion" class="form-control" rows="14"></textarea>
                         </div>
                     </div>
                 </div>
@@ -72,11 +74,11 @@
                 <br>
                 <div class="form-group p-4">
                     <div class="row">
-                        <div class="col-md-1">
+                        <div class="col-md-2">
                             <button type="submit" class="btn btn-success"><i class="menu-icon fa-solid fa-floppy-disk"></i>
                                 Guardar</button>
                         </div>
-                        <div class="col-md-1">
+                        <div class="col-md-2">
                             <a href="{{ url('/entradas') }}" class="btn btn-danger"><i
                                     class="menu-icon fa-solid fa-xmark"></i>
                                 Cancelar</a>
@@ -102,16 +104,19 @@
 
         // Mensaje a mostrar
         if (algunoSeleccionado) {
-            mensaje = "✅ Imágen Seleccionada";
+            mensaje =
+                '<div class="alert alert-success" role="alert"> <i class="fa-solid fa-check"></i> Imágen Seleccionada </div>';
         } else {
-            mensaje = "⚠️ No se ha seleccionado ninguna imágen";
+            mensaje =
+                '<div class="alert alert-danger" role="alert"> <i class="fa-solid fa-triangle-exclamation"></i> No se ha seleccionado ninguna imágen </div>';
         }
 
         //cuando la pagina haya cargado que muestre una funcion
         function imprimeMensaje() {
             mensaje = "";
 
-            mensaje = "✅ Imágen Seleccionada";
+            mensaje =
+                '<div class="alert alert-success" role="alert"> <i class="fa-solid fa-check"></i> Imágen Seleccionada </div>';;
         }
 
 
@@ -119,6 +124,18 @@
         mensajeDiv.innerHTML = mensaje;
 
         function mostrarOcultarUbicaciones() {
+            let menuUbicaciones = document.getElementById("menuUbicaciones");
+
+            if (menuUbicaciones.style.display === "none") {
+                menuUbicaciones.style.display = "block";
+            } else {
+                menuUbicaciones.style.display = "none";
+                mensajeDiv.innerHTML = mensaje;
+            }
+
+        }
+
+        function mostrarOcultarUbicacionesCheck() {
             let menuUbicaciones = document.getElementById("menuUbicaciones");
 
             if (menuUbicaciones.style.display === "none") {
