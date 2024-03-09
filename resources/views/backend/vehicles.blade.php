@@ -1,6 +1,6 @@
 @extends('comunes.masterBackend')
 
-@section('title', 'Entradas')
+@section('title', 'Vehículos')
 
 @section('content')
     <!--Mostrando la tabla con las entradas que hay-->

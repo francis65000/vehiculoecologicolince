@@ -15,7 +15,8 @@ return new class extends Migration
         Schema::create('vehiculos', function (Blueprint $table) {
             $table->id();
             $table->string('nombreVehiculo', 100);
-            $table->string('descripcion', 200);
+            $table->string('slug')->unique();
+            $table->text('descripcion')->nullable();
             $table->string('motor', 100);
             $table->string('alimentacionCombustible', 100);
             $table->string('arranque', 100);

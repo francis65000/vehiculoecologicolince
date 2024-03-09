@@ -15,7 +15,9 @@ return new class extends Migration
         Schema::create('equipo', function (Blueprint $table) {
             $table->id();
             $table->string('anio');
-            $table->string('descripcion');
+            $table->string('nombre');
+            $table->string('slug')->unique();
+            $table->text('descripcion')->nullable();
             $table->unsignedBigInteger('id_imagen');
             $table->timestamps();
 

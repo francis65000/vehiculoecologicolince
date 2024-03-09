@@ -15,7 +15,8 @@ return new class extends Migration
         Schema::create('pilotos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('descripcion');
+            $table->string('slug')->unique();
+            $table->text('descripcion')->nullable();
             $table->string('equipo');
             $table->unsignedBigInteger('id_imagen');
             $table->timestamps();
