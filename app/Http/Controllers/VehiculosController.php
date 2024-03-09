@@ -12,6 +12,10 @@ use App\Models\Medios;
 class VehiculosController extends Controller
 {
 
+    /*///////////////////////////////////////////////////////////////////*/
+    /*/////////////////////// FUNCIONES FRONT   ////////////////////////*/
+    /*/////////////////////////////////////////////////////////////////*/
+
     //VER TODOS LOS VEHICULOS EN LA PAGINA PRINCIPAL
     public function verVehiculos(Request $request)
     {
@@ -19,16 +23,15 @@ class VehiculosController extends Controller
         $medios = Medios::all();
         return view('front.inicio', compact('vehiculos','medios'));
     }
-    public function edit()
+
+    /*///////////////////////////////////////////////////////////////////*/
+    /*/////////////////////// FUNCIONES BACKEND ////////////////////////*/
+    /*/////////////////////////////////////////////////////////////////*/
+
+    //VER TODOS LOS VEHICULOS EN EL BACKEND
+    public function backendVerVehiculos(Request $request)
     {
-        //
-    }
-    public function update()
-    {
-        //
-    }
-    public function delete()
-    {
-        //
+        $vehiculos = Vehiculos::all();
+        return view('backend.vehicles', compact('vehiculos'));
     }
 }

@@ -34,17 +34,10 @@
             </a>
         </li>
         <li class="menu-item active">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <a href="{{url('/entradas-vehiculos')}}" class="menu-link">
                 <i class="menu-icon fa-solid fa-car-side"></i>
                 <div data-i18n="Dashboards">VEHÍCULOS</div>
             </a>
-            <ul class="menu-sub">
-                <li class="menu-item ">
-                    <a href="#" class="menu-link">
-                        <div data-i18n="Analytics">Enlace 1</div>
-                    </a>
-                </li>
-            </ul>
         </li>
         <li class="menu-item active">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
