@@ -37,6 +37,9 @@ Route::middleware('auth')->group(function () {
 
     //VEHICULOS
     Route::get('/entradas-vehiculos', [VehiculosController::class, 'backendVerVehiculos'])->name('backendVehiculos.show');
+    Route::get('/nuevo-vehiculo', [VehiculosController::class, 'newVehiculo']);
+    Route::post('/insertar-vehiculo', [VehiculosController::class, 'addNewVehiculo']);
+    Route::get('/editar-vehiculo/{id}', [VehiculosController::class, 'editVehiculo'])->name('vehiculos.edit');
 
     //DORSALES
 
