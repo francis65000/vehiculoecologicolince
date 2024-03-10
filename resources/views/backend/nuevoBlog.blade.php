@@ -143,8 +143,6 @@
                         </li>
                     </ul>
                 </li>
-
-
                 <br>
                 <div class="form-group">
                     <div class="row">
@@ -155,7 +153,18 @@
                         <div class="col-md-2">
                             <label for="fecha_publicacion">Fecha de publicación:</label>
                             <input type="date" name="fecha_publicacion" id="fecha_publicacion" class="form-control">
-                            <input type="hidden" name="estado" id="estado" value="3">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="slug">Slug:</label>
+                            <input type="text" name="slug" id="slug" class="form-control" required>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-center justify-content-right">
+                            <button type="button" id="generarSlug" class="btn btn-primary">Generar</button>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="" id="infoSlug"></div>
                         </div>
                     </div>
                     <div class="row">
@@ -186,106 +195,6 @@
     </div>
 
     <!-- Tu código JavaScript -->
-    <script>
-        // Obtener referencia al div donde queremos mostrar el mensaje
-        let mensajeDiv = document.getElementById("informacion1");
-        let mensajeDiv2 = document.getElementById("informacion2");
-        let mensajeDiv3 = document.getElementById("informacion3");
-
-
-        let radioButtons = document.querySelectorAll('.opciones');
-        let radioButtons2 = document.querySelectorAll('.opciones2');
-        let radioButtons3 = document.querySelectorAll('.opciones3');
-
-
-
-        // Verificar si algún radio button está seleccionado
-        //Comprobar 1
-        let algunoSeleccionado = Array.from(radioButtons).some(function(radioButton) {
-            return radioButton.checked;
-        });
-        //Comprobar 2
-        let algunoSeleccionado2 = Array.from(radioButtons2).some(function(radioButton) {
-            return radioButton.checked;
-        });
-        //Comprobar 3
-        let algunoSeleccionado3 = Array.from(radioButtons3).some(function(radioButton) {
-            return radioButton.checked;
-        });
-
-        let mensaje = "";
-        let mensaje2 = "";
-        let mensaje3 = "";
-
-        // Mensaje a mostrar
-
-        //Comprobar 1
-        if (algunoSeleccionado) {
-            mensaje =
-                '<div class="alert alert-success" role="alert"> <i class="fa-solid fa-check"></i> Imágen Seleccionada </div>';
-        } else {
-            mensaje =
-                '<div class="alert alert-danger" role="alert"> <i class="fa-solid fa-triangle-exclamation"></i> No se ha seleccionado ninguna imágen </div>';
-        }
-
-        //Comprobar 2
-        if (algunoSeleccionado2) {
-            mensaje2 =
-                '<div class="alert alert-success" role="alert"> <i class="fa-solid fa-check"></i> Imágen Seleccionada </div>';
-        } else {
-            mensaje2 =
-                '<div class="alert alert-danger" role="alert"> <i class="fa-solid fa-triangle-exclamation"></i> No se ha seleccionado ninguna imágen </div>';
-        }
-
-        //Comprobar 3
-        if (algunoSeleccionado3) {
-            mensaje3 =
-                '<div class="alert alert-success" role="alert"> <i class="fa-solid fa-check"></i> Imágen Seleccionada </div>';
-        } else {
-            mensaje3 =
-                '<div class="alert alert-danger" role="alert"> <i class="fa-solid fa-triangle-exclamation"></i> No se ha seleccionado ninguna imágen </div>';
-        }
-
-        //cuando la pagina haya cargado que muestre una funcion
-        function imprimeMensaje() {
-            mensaje = "";
-
-            mensaje =
-                '<div class="alert alert-success" role="alert"> <i class="fa-solid fa-check"></i> Imágen Seleccionada </div>';
-        }
-
-
-        // Mostrar el mensaje en el div
-        mensajeDiv.innerHTML = mensaje;
-        mensajeDiv2.innerHTML = mensaje2;
-        mensajeDiv3.innerHTML = mensaje3;
-
-        function mostrarOcultarMenu(menuId) {
-            let menu = document.getElementById(menuId);
-            if (menu.style.display === "none") {
-                menu.style.display = "block";
-            } else {
-                menu.style.display = "none";
-                mensajeDiv.innerHTML = mensaje; // Asegúrate de que mensajeDiv y mensaje estén definidos fuera de esta función
-            }
-        }
-
-        function mostrarOcultarUbicacionesCheck(menuId) {
-            let menuUbicaciones = document.getElementById("menuUbicaciones" + menuId);
-
-            if (menuUbicaciones.style.display === "none") {
-                menuUbicaciones.style.display = "block";
-            } else {
-                menuUbicaciones.style.display = "none";
-                if(menuId == 1){
-                    mensajeDiv.innerHTML = mensaje;
-                }elseif (menuId == 2){
-                    mensajeDiv2.innerHTML = mensaje2;
-                }else{
-                    mensajeDiv3.innerHTML = mensaje3;
-                }
-            }
-        }
-    </script>
+    <script src="{{asset('assets/js/controlerBlog.js')}}"></script>
 
 @endsection
