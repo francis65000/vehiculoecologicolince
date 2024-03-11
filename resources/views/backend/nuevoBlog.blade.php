@@ -87,7 +87,7 @@
                                                 class="imagenesBlog rounded" alt="{{ $imagen->nombre }}">
                                             <div class="m-2 text-center">
                                                 <input type="radio" class="opciones2" name="id_imagen_2"
-                                                    id="{{ $imagen->id }}" value="{{ $imagen->id }}" required
+                                                    id="{{ $imagen->id }}" value="{{ $imagen->id }}" 
                                                     onclick="mostrarOcultarUbicacionesCheck('2')">
                                                 {{ $imagen->nombre }}
                                             </div>
@@ -131,7 +131,7 @@
                                                 class="imagenesBlog rounded" alt="{{ $imagen->nombre }}">
                                             <div class="m-2 text-center">
                                                 <input type="radio" class="opciones3" name="id_imagen_3"
-                                                    id="{{ $imagen->id }}" value="{{ $imagen->id }}" required
+                                                    id="{{ $imagen->id }}" value="{{ $imagen->id }}" 
                                                     onclick="mostrarOcultarUbicacionesCheck('3')">
                                                 {{ $imagen->nombre }}
                                             </div>
@@ -155,18 +155,18 @@
                             <input type="date" name="fecha_publicacion" id="fecha_publicacion" class="form-control">
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row align-items-center">
                         <div class="col-md-6">
                             <label for="slug">Slug:</label>
                             <input type="text" name="slug" id="slug" class="form-control" required>
                         </div>
-                        <div class="col-md-2 d-flex align-items-center justify-content-right">
-                            <button type="button" id="generarSlug" class="btn btn-primary">Generar</button>
+                        <div class="col-md-2">
+                            <button type="button" id="generarSlug" class="btn btn-primary mt-4"><i class="menu-icon fa-solid fa-rotate"></i>Generar</button>
                         </div>
-                        <div class="col-md-3">
-                            <div class="" id="infoSlug"></div>
+                        <div class="col-md-2">
+                            <div class="mt-4" id="infoSlug"></div>
                         </div>
-                    </div>
+                    </div>                    
                     <div class="row">
                         <div class="col-md-12">
                             <label for="descripcion">Descripción:</label>

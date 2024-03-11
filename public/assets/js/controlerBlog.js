@@ -5,7 +5,7 @@ function mostrarMensajeSlug(slug) {
     if (slug.trim() === '') {
         infoSlug.innerHTML = '<div class="alert alert-danger" role="alert"> <i class="fa-solid fa-triangle-exclamation"></i> Slug no generado </div>';
     } else {
-        infoSlug.innerHTML = '<div class="alert alert-success" role="alert"> <i class="fa-solid fa-check"></i> Slug generado correctamente </div>';
+        infoSlug.innerHTML = '<div class="alert alert-success" role="alert"> <i class="fa-solid fa-check"></i> Slug generado </div>';
     }
 }
 

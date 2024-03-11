@@ -27,16 +27,22 @@ class BlogController extends Controller
         //comprobar que los campos no estén vacíos
         $request->validate([
             'titulo' => 'required',
+            'slug' => 'required',
             'descripcion' => 'required',
             'id_imagen' => 'required',
+            'id_imagen_2' => 'nullable',
+            'id_imagen_3' => 'nullable',
             'fecha_publicacion' => 'required'
         ]);
 
         //crear una nueva entrada
         $entrada=new Blog();
         $entrada->titulo=$request->titulo;
+        $entrada->slug=$request->slug;
         $entrada->descripcion=$request->descripcion;
         $entrada->id_imagen=$request->id_imagen;
+        $entrada->id_imagen_2=$request->id_imagen_2;
+        $entrada->id_imagen_3=$request->id_imagen_3;
         $entrada->fecha_publicacion=$request->fecha_publicacion;
         $entrada->save();
 
