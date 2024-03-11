@@ -10,7 +10,7 @@
 
         </div>
         <div class="card-body">
-            <form action="{{ url('edit-equipo') }}" method="POST">
+            <form action="{{ url('actualizar-equipo/'. $equipo->id) }}" method="POST">
                 @csrf
                 <!--SELECCTOR DE IMAGEN-->
                 <li class="menu-item active open">
@@ -96,7 +96,7 @@
                                 Guardar</button>
                         </div>
                         <div class="col-md-2">
-                            <a href="{{ url('/entradas-vehiculos') }}" class="btn btn-danger"><i
+                            <a href="{{ url('/entradas-equipos') }}" class="btn btn-danger"><i
                                     class="menu-icon fa-solid fa-xmark"></i>
                                 Cancelar</a>
                         </div>

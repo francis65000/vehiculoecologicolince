@@ -31,7 +31,7 @@ class VehiculosController extends Controller
     //VER TODOS LOS VEHICULOS EN EL BACKEND
     public function backendVerVehiculos(Request $request)
     {
-        $vehiculos = Vehiculos::all();
+        $vehiculos = Vehiculos::orderBy('created_at', 'desc')->get();
         return view('backend.vehicles', compact('vehiculos'));
     }
 

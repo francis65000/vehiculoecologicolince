@@ -28,7 +28,7 @@ class EquiposController extends Controller
     //VER TODOS LOS EQUIPO EN EL BACKEND
     public function backendVerEquipos(Request $request)
     {
-        $equipos = Equipo::all();
+        $equipos = Equipo::orderBy('created_at', 'desc')->get();
         return view('backend.equipos', compact('equipos'));
     }
 
