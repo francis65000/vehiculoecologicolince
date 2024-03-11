@@ -1,6 +1,6 @@
 @extends('comunes.masterBackend')
 
-@section('title', 'Nueva Entrada')
+@section('title', 'Editando Entrada')
 
 @section('content')
     <!--Mostrando la tabla con las entradas que hay-->
@@ -170,20 +170,22 @@
                         <div class="col-md-6">
                             <label for="slug">Slug:</label>
                             <input type="text" name="slug" id="slug" class="form-control"
-                                value="{{ $entrada->slug }}" required>
+                                value="{{ $entrada->slug }}" readonly>
                         </div>
-                        <div class="col-md-2">
+                        <!--<div class="col-md-2">
                             <button type="button" id="generarSlug" class="btn btn-primary mt-4"><i
                                     class="menu-icon fa-solid fa-rotate"></i>Generar</button>
-                        </div>
+                        </div>-->
                         <div class="col-md-2">
-                            <div class="mt-4" id="infoSlug"></div>
+                            <div class="mt-4" id="infoSlug">
+                                <div class="alert alert-success" role="alert"> <i class="fa-solid fa-check"></i> Slug generado </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                             <label for="descripcion">Descripción:</label>
-                            <textarea name="descripcion" id="descripcion" class="form-control" rows="14">{{ $entrada->descripcion }}</textarea>
+                            <textarea name="descripcion" id="myeditorinstance" class="form-control" rows="14">{{ $entrada->descripcion }}</textarea>
                         </div>
                     </div>
                 </div>
@@ -207,6 +209,6 @@
         </div>
     </div>
 
-    <script src="{{ asset('assets/js/controlerBlog.js') }}"></script>
+    <script src="{{ asset('assets/js/controllerEditBlog.js') }}"></script>
 
 @endsection

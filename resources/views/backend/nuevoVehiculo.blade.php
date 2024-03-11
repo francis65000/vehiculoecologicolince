@@ -14,16 +14,21 @@
                 @csrf
                 <!--SELECCTOR DE IMAGEN-->
                 <li class="menu-item active open">
-                    <a href="#" class="btn btn-primary" onclick="mostrarOcultarUbicaciones()">
-                        <i class="menu-icon fa-solid fa-image"></i>
-                        <div data-i18n="Dashboards">Seleccionar Imágen</div>
-
-                    </a>
-                    <!--AREA DE INFORMACION DE SI SE HA SELECCIONADO UNA IMAGEN-->
-                    <div class="col-3 mt-4" id="informacion"></div>
-                    <!--FIN AREA-->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="#" class="btn btn-primary" onclick="mostrarOcultarUbicaciones()">
+                                    <i class="menu-icon fa-solid fa-image"></i>
+                                    <div data-i18n="Dashboards">Seleccionar Imágen Principal</div>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="" id="informacion"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- AREA DE INFORMACION DE SI SE HA SELECCIONADO UNA IMAGEN -->
                     <ul class="menu-sub" id="menuUbicaciones" style="display: none;">
-                        <!-- MENU PENDIENTE DE ENLAZAR -->
                         <li class="menu-item">
                             <div data-i18n="CRM">
                                 <div class="row mt-4">
@@ -32,13 +37,13 @@
                                 </div>
                                 <div class="row mt-4">
                                     @endif
-                                    <div class="col-md-1"> <!-- Cambiado a col-md-1 -->
+                                    <div class="col-md-1">
                                         <div class="card">
                                             <img src="{{ asset('assets/uploads/' . $imagen->nombre) }}"
                                                 class="imagenesBlog rounded" alt="{{ $imagen->nombre }}">
                                             <div class="m-2 text-center">
-                                                <input type="radio" name="id_imagen" id="{{ $imagen->id }}"
-                                                    value="{{ $imagen->id }}" required
+                                                <input type="radio" class="opciones1" name="id_imagen"
+                                                    id="{{ $imagen->id }}" value="{{ $imagen->id }}" required
                                                     onclick="mostrarOcultarUbicacionesCheck()">
                                                 {{ $imagen->nombre }}
                                             </div>
@@ -55,7 +60,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label for="nombreVehiculo">Nombre:</label>
-                            <input type="text" name="nombreVehiculo" id="nombreVehiculo" class="form-control" maxlength="100" required>
+                            <input type="text" name="nombreVehiculo" id="titulo" class="form-control" maxlength="100" required>
                         </div>
                         <div class="col-md-6">
                             <label for="motor">Motor:</label>
@@ -63,9 +68,21 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-md-6">
+                            <label for="slug">Slug:</label>
+                            <input type="text" name="slug" id="slug" class="form-control" required>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" id="generarSlug" class="btn btn-primary mt-4"><i class="menu-icon fa-solid fa-rotate"></i>Generar</button>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="mt-4" id="infoSlug"></div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-12">
                             <label for="descripcion">Descripción:</label>
-                            <textarea name="descripcion" id="descripcion" class="form-control" rows="5" maxlength="100" required></textarea>
+                            <textarea name="descripcion" id="myeditorinstance" class="form-control" rows="5" required></textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -169,63 +186,6 @@
     </div>
 
     <!-- Tu código JavaScript -->
-    <script>
-        // Obtener referencia al div donde queremos mostrar el mensaje
-        let mensajeDiv = document.getElementById("informacion");
-
-        let radioButtons = document.querySelectorAll('input[name="opciones"]');
-        // Verificar si algún radio button está seleccionado
-        let algunoSeleccionado = Array.from(radioButtons).some(function(radioButton) {
-            return radioButton.checked;
-        });
-
-        let mensaje = "";
-
-        // Mensaje a mostrar
-        if (algunoSeleccionado) {
-            mensaje =
-                '<div class="alert alert-success" role="alert"> <i class="fa-solid fa-check"></i> Imágen Seleccionada </div>';
-        } else {
-            mensaje =
-                '<div class="alert alert-danger" role="alert"> <i class="fa-solid fa-triangle-exclamation"></i> No se ha seleccionado ninguna imágen </div>';
-        }
-
-        //cuando la pagina haya cargado que muestre una funcion
-        function imprimeMensaje() {
-            mensaje = "";
-
-            mensaje =
-                '<div class="alert alert-success" role="alert"> <i class="fa-solid fa-check"></i> Imágen Seleccionada </div>';;
-        }
-
-
-        // Mostrar el mensaje en el div
-        mensajeDiv.innerHTML = mensaje;
-
-        function mostrarOcultarUbicaciones() {
-            let menuUbicaciones = document.getElementById("menuUbicaciones");
-
-            if (menuUbicaciones.style.display === "none") {
-                menuUbicaciones.style.display = "block";
-            } else {
-                menuUbicaciones.style.display = "none";
-                mensajeDiv.innerHTML = mensaje;
-            }
-
-        }
-
-        function mostrarOcultarUbicacionesCheck() {
-            let menuUbicaciones = document.getElementById("menuUbicaciones");
-
-            if (menuUbicaciones.style.display === "none") {
-                menuUbicaciones.style.display = "block";
-            } else {
-                menuUbicaciones.style.display = "none";
-                imprimeMensaje();
-                mensajeDiv.innerHTML = mensaje;
-            }
-
-        }
-    </script>
+    <script src="{{ asset('assets/js/controllerVehiculos.js') }}"></script>
 
 @endsection

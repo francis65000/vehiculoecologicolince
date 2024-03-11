@@ -42,6 +42,11 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ asset('assets/js/config.js') }}"></script>
+
+    <!--Tiny-->
+    <script src="https://cdn.tiny.cloud/1/ct6pz9c0yqv2jv98wbtqafkct7y0x1hla8ekbjm18oic3gyo/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <x-head.tinymce-config/>
 </head>
 
 <body>
@@ -98,6 +103,7 @@
             }, 5000); // 4000 milisegundos = 4 segundos
         });
     </script>-->
+    <x-forms.tinymce-editor/>
 </body>
 
 </html>

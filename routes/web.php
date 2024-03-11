@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VehiculosController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\EquiposController;
 use App\Http\Controllers\MediosController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,14 +34,22 @@ Route::middleware('auth')->group(function () {
     Route::post('/addMedios', [MediosController::class, 'newMedio']);
     Route::delete('/medios/{id}', [MediosController::class, 'deleteMedio'])->name('medios.delete');
 
-    
-
     //VEHICULOS
     Route::get('/entradas-vehiculos', [VehiculosController::class, 'backendVerVehiculos'])->name('backendVehiculos.show');
     Route::get('/nuevo-vehiculo', [VehiculosController::class, 'newVehiculo']);
     Route::post('/insertar-vehiculo', [VehiculosController::class, 'addNewVehiculo']);
     Route::get('/editar-vehiculo/{id}', [VehiculosController::class, 'editVehiculo'])->name('vehiculos.edit');
+    Route::post('/actualizar-vehiculo/{id}', [VehiculosController::class, 'updateVehiculo'])->name('vehiculos.update');
+    Route::get('/eliminar-vehiculo/{id}', [VehiculosController::class, 'deleteMedio'])->name('vehiculos.delete');
 
+    //EQUIPOS
+    Route::get('/entradas-equipos', [EquiposController::class, 'backendVerEquipos'])->name('backendEquipos.show');
+    Route::get('/nuevo-equipo', [EquiposController::class, 'newEquipo']);   
+    Route::post('/insertar-equipo', [EquiposController::class, 'addNewEquipo']);
+    Route::get('/editar-equipo/{id}', [EquiposController::class, 'editEquipo'])->name('equipos.edit');
+    Route::post('/actualizar-equipo/{id}', [EquiposController::class, 'updateEquipo'])->name('equipos.update');
+    Route::get('/eliminar-equipo/{id}', [EquiposController::class, 'deleteEquipo'])->name('equipos.delete');
+    
     //DORSALES
 
     //CONFIGURACION
