@@ -46,23 +46,28 @@
             </a>
         </li> 
         <li class="menu-item active">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <a href="{{url('/entradas-dorsales')}}" class="menu-link">
                 <i class="menu-icon fa-solid fa-bookmark"></i>
                 <div data-i18n="Dashboards">DORSALES</div>
             </a>
-            <ul class="menu-sub">
-                <li class="menu-item ">
-                    <a href="#" class="menu-link">
-                        <div data-i18n="Analytics">Enlace 1</div>
-                    </a>
-                </li>
-            </ul>
         </li>   
         <li class="menu-item active">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <a href="{{url('/entradas-patrocinadores')}}" class="menu-link">
                 <i class="menu-icon fa-solid fa-euro-sign"></i>
                 <div data-i18n="Dashboards">PATROCINADORES</div>
             </a>
+        </li>
+        <li class="menu-item active">
+            <a href="{{url('/entradas-pilotos')}}" class="menu-link">
+                <i class="menu-icon fa-solid fa-id-card"></i>
+                <div data-i18n="Dashboards">PILOTOS</div>
+            </a>
+        </li>
+        <li class="menu-item active">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon fa-solid fa-trophy"></i>
+                <div data-i18n="Dashboards">RECONOCIMIENTOS</div>
+            </a>
             <ul class="menu-sub">
                 <li class="menu-item ">
                     <a href="#" class="menu-link">
@@ -70,25 +75,7 @@
                     </a>
                 </li>
             </ul>
-        </li>
-        <li class="menu-item active">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon fa-solid fa-id-card"></i>
-                <div data-i18n="Dashboards">PILOTOS</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item ">
-                    <a href="#" class="menu-link">
-                        <div data-i18n="Analytics">Usuarios</div>
-                    </a>
-                </li>
-                <li class="menu-item ">
-                    <a href="#" class="menu-link">
-                        <div data-i18n="Analytics">Acerca de</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
+        </li> 
         <li class="menu-item active">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon fa-solid fa-gear"></i>

@@ -4,8 +4,11 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VehiculosController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\DorsalesController;
 use App\Http\Controllers\EquiposController;
 use App\Http\Controllers\MediosController;
+use App\Http\Controllers\PatrocinadoresController;
+use App\Http\Controllers\PilotosController;
 use Illuminate\Support\Facades\Route;
 
 /*////////////////////////////////////////////////////////////////////////////////*/
@@ -51,6 +54,31 @@ Route::middleware('auth')->group(function () {
     Route::get('/eliminar-equipo/{id}', [EquiposController::class, 'deleteEquipo'])->name('equipos.delete');
     
     //DORSALES
+    Route::get('/entradas-dorsales', [DorsalesController::class, 'backendVerDorsales'])->name('backendDorsales.show');
+    Route::get('/nueva-dorsal', [DorsalesController::class, 'newDorsal']);
+    Route::post('/insertar-dorsal', [DorsalesController::class, 'addNewDorsal']);
+    Route::get('/editar-dorsal/{id}', [DorsalesController::class, 'editDorsal'])->name('dorsales.edit');
+    Route::post('/actualizar-dorsal/{id}', [DorsalesController::class, 'updateDorsal'])->name('dorsales.update');
+    Route::get('/eliminar-dorsal/{id}', [DorsalesController::class, 'deleteDorsal'])->name('dorsales.delete');
+
+    //PATROCINADORES
+    Route::get('/entradas-patrocinadores', [PatrocinadoresController::class, 'backendVerPatrocinadores'])->name('backendPatrocinadores.show');
+    Route::get('/nuevo-patrocinador', [PatrocinadoresController::class, 'newPatrocinador']);
+    Route::post('/insertar-patrocinador', [PatrocinadoresController::class, 'addNewPatrocinador']);
+    Route::get('/editar-patrocinador/{id}', [PatrocinadoresController::class, 'editPatrocinador'])->name('patrocinadores.edit');
+    Route::post('/actualizar-patrocinador/{id}', [PatrocinadoresController::class, 'updatePatrocinador'])->name('patrocinadores.update');
+    Route::get('/eliminar-patrocinador/{id}', [PatrocinadoresController::class, 'deletePatrocinador'])->name('patrocinadores.delete');
+    
+    //PILOTOS
+    Route::get('/entradas-pilotos', [PilotosController::class, 'backendVerPilotos'])->name('backendPilotos.show');
+    Route::get('/nuevo-piloto', [PilotosController::class, 'newPiloto']);
+    Route::post('/insertar-piloto', [PilotosController::class, 'addNewPiloto']);
+    Route::get('/editar-piloto/{id}', [PilotosController::class, 'editPiloto'])->name('pilotos.edit');
+    Route::post('/actualizar-piloto/{id}', [PilotosController::class, 'updatePiloto'])->name('pilotos.update');
+    Route::get('/eliminar-piloto/{id}', [PilotosController::class, 'deletePiloto'])->name('pilotos.delete');
+    
+    //RECONOCIMIENTOS
+
 
     //CONFIGURACION
 });

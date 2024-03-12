@@ -1,18 +1,18 @@
 @extends('comunes.masterBackend')
 
-@section('title', 'Nuevo Equipo')
+@section('title', 'Editar Dorsal')
 
 @section('content')
     <!--Mostrando la tabla con las entradas que hay-->
-    <h1 class="p-4">Añadir nuevo equipo</h1>
+    <h1 class="p-4">Editar dorsal</h1>
     <div class="card mx-3">
         <div class="card-header d-flex align-items-center justify-content-between">
 
         </div>
         <div class="card-body">
-            <form action="{{ url('insertar-equipo') }}" method="POST">
+            <form action="{{ url('actualizar-dorsal/' . $dorsal->id) }}" method="POST">
                 @csrf
-                <!--SELECCTOR DE IMAGEN-->
+                <!-- Menú 1 //////////////////////////////////////////////////////////////////////////////////////////-->
                 <li class="menu-item active open">
                     <div class="container">
                         <div class="row">
@@ -58,34 +58,15 @@
                 <br>
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-md-6">
-                            <label for="nombre">Nombre Equipo:</label>
-                            <input type="text" name="nombre" id="titulo" class="form-control" maxlength="100"
-                                required>
-                        </div>
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <label for="anio">Año:</label>
-                            <input type="text" name="anio" id="anio" class="form-control" maxlength="100"
-                                required>
+                            <input type="text" name="anio" id="anio" class="form-control" value="{{$dorsal->anio}}" required>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="slug">Slug:</label>
-                            <input type="text" name="slug" id="slug" class="form-control" required>
-                        </div>
-                        <div class="col-md-2">
-                            <button type="button" id="generarSlug" class="btn btn-primary mt-4"><i
-                                    class="menu-icon fa-solid fa-rotate"></i>Generar</button>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="mt-4" id="infoSlug"></div>
-                        </div>
-                    </div>
+                    </div>                  
                     <div class="row">
                         <div class="col-md-12">
                             <label for="descripcion">Descripción:</label>
-                            <textarea name="descripcion" id="myeditorinstance" class="form-control" rows="5"></textarea>
+                            <textarea name="descripcion" id="myeditorinstance" class="form-control" rows="14">{{$dorsal->descripcion}}</textarea>
                         </div>
                     </div>
                 </div>
@@ -94,11 +75,12 @@
                 <div class="form-group p-4">
                     <div class="row">
                         <div class="col-md-2">
-                            <button type="submit" class="btn btn-success"><i class="menu-icon fa-solid fa-floppy-disk"></i>
+                            <button type="submit" class="btn btn-success"><i
+                                    class="menu-icon fa-solid fa-floppy-disk"></i>
                                 Guardar</button>
                         </div>
                         <div class="col-md-2">
-                            <a href="{{ url('/entradas-equipos') }}" class="btn btn-danger"><i
+                            <a href="{{ url('/entradas-dorsales') }}" class="btn btn-danger"><i
                                     class="menu-icon fa-solid fa-xmark"></i>
                                 Cancelar</a>
                         </div>
@@ -109,7 +91,6 @@
     </div>
 
     <!-- Tu código JavaScript -->
-    <script src="{{ asset('assets/js/controllerVehiculos.js') }}"></script>
+    <script src="{{ asset('assets/js/controllerEditVehiculos.js') }}"></script>
 
-    
 @endsection

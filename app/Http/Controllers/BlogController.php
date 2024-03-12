@@ -40,7 +40,7 @@ class BlogController extends Controller
         //crear una nueva entrada
         $entrada=new Blog();
         $entrada->titulo=$request->titulo;
-        $entrada->slug = $request->slug . '-' . $siguienteId;
+        $entrada->slug = $siguienteId.'-'.$request->slug;
         $entrada->descripcion=$request->descripcion;
         $entrada->id_imagen=$request->id_imagen;
         $entrada->id_imagen_2=$request->id_imagen_2;

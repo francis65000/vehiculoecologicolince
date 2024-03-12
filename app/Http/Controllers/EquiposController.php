@@ -58,7 +58,7 @@ class EquiposController extends Controller
         //crear un nuevo vehiculo
         $equipo = new Equipo;
         $equipo->nombre = $request->nombre;
-        $equipo->slug = $request->slug. '-' . $siguienteId;
+        $equipo->slug = $siguienteId. '-' . $request->slug;
         $equipo->anio = $request->anio;
         $equipo->descripcion = $request->descripcion;
         $equipo->id_imagen = $request->id_imagen;
