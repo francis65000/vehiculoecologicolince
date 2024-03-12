@@ -97,5 +97,14 @@ class PilotosController extends Controller
         return redirect()->route('backendPilotos.show');
     }
 
+    //ELIMINAR PILOTO
+    public function deletePiloto(Request $request, $id)
+    {
+        $piloto = Pilotos::find($id);
+        $piloto->delete();
+
+        return redirect()->route('backendPilotos.show');
+    }
+
    
 }

@@ -26,8 +26,8 @@
                                 {{ $post->created_at }}
                             </td>
                             <td>
-                                <a href="{{ url('/editar-piloto/'.$post->id) }}" class="btn btn-primary"><i class="menu-icon fa-solid fa-pen-to-square"></i>Editar</a>
-                                <a href="{{ url('/eliminar-piloto/'.$post->id) }}" class="btn btn-danger"><i class="menu-icon fa-solid fa-xmark"></i>Eliminar</a>
+                                <a href="{{ url('editar-piloto/'.$post->id) }}" class="btn btn-primary"><i class="menu-icon fa-solid fa-pen-to-square"></i>Editar</a>
+                                <a href="{{ url('eliminar-piloto/'.$post->id) }}" class="btn btn-danger"><i class="menu-icon fa-solid fa-xmark"></i>Eliminar</a>
                             </td>
                         </tr>
                     @endforeach

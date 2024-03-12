@@ -1,37 +1,34 @@
 @extends('comunes.masterBackend')
 
-@section('title', 'Editando Piloto')
+@section('title', 'Editar Reconocimiento')
 
 @section('content')
     <!--Mostrando la tabla con las entradas que hay-->
-    <h1 class="p-4">Editando piloto</h1>
+    <h1 class="p-4">Editar reconocimiento</h1>
     <div class="card mx-3">
         <div class="card-header d-flex align-items-center justify-content-between">
 
         </div>
         <div class="card-body">
-            <form action="{{ url('actualizar-piloto/' . $piloto->id) }}" method="POST">
+            <form action="{{ url('actualizar-reconocimiento/'.$reconocimiento->id) }}" method="POST">
                 @csrf
                 <!-- Menú 1 //////////////////////////////////////////////////////////////////////////////////////////-->
                 <li class="menu-item active open">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-3">
-                                <a href="#" class="btn btn-primary" onclick="mostrarOcultarMenu('menuUbicaciones1')">
+                                <button type="button" class="btn btn-primary" onclick="mostrarOcultarUbicaciones()">
                                     <i class="menu-icon fa-solid fa-image"></i>
-                                    <div data-i18n="Dashboards">Seleccionar Imágen Principal</div>
-                                </a>
+                                    <div data-i18n="Dashboards">Seleccionar Imágen</div>
+                                </button>
                             </div>
                             <div class="col-md-3">
-                                <div class="" id="informacion1"></div>
-                            </div>
-                            <div class="col-md-3 d-flex align-items-center justify-content-start">
-                                <p>(Obligatoria)</p>
+                                <div class="" id="informacion"></div>
                             </div>
                         </div>
                     </div>
                     <!-- AREA DE INFORMACION DE SI SE HA SELECCIONADO UNA IMAGEN -->
-                    <ul class="menu-sub" id="menuUbicaciones1" style="display: none;">
+                    <ul class="menu-sub" id="menuUbicaciones" style="display: none;">
                         <li class="menu-item">
                             <div data-i18n="CRM">
                                 <div class="row mt-4">
@@ -47,7 +44,7 @@
                                             <div class="m-2 text-center">
                                                 <input type="radio" class="opciones1" name="id_imagen"
                                                     id="{{ $imagen->id }}" value="{{ $imagen->id }}" required
-                                                    onclick="mostrarOcultarUbicacionesCheck('1')">
+                                                    onclick="mostrarOcultarUbicacionesCheck()">
                                                 {{ $imagen->nombre }}
                                             </div>
                                         </div>
@@ -62,36 +59,14 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" name="nombre" id="titulo" class="form-control" value="{{$piloto->nombre}}" required>
+                            <label for="nombreReconocimiento">Nombre del reconocimiento:</label>
+                            <input type="text" name="nombreReconocimiento" id="nombreReconocimiento" class="form-control" value="{{$reconocimiento->nombreReconocimiento}}" required>
                         </div>
-                        <div class="col-md-6">
-                            <label for="equipo">Equipo:</label>
-                            <input type="text" name="equipo" id="equipo" class="form-control" value="{{$piloto->equipo}}" required>
+                        <div class="col-md-4">
+                            <label for="fecha">Fecha:</label>
+                            <input type="text" name="fecha" id="fecha" class="form-control" value="{{$reconocimiento->fecha}}" required>
                         </div>
-                    </div>
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <label for="slug">Slug:</label>
-                            <input type="text" name="slug" id="slug" class="form-control"
-                                value="{{ $piloto->slug }}" readonly>
-                        </div>
-                        <!--<div class="col-md-2">
-                            <button type="button" id="generarSlug" class="btn btn-primary mt-4"><i
-                                    class="menu-icon fa-solid fa-rotate"></i>Generar</button>
-                        </div>-->
-                        <div class="col-md-2">
-                            <div class="mt-4" id="infoSlug">
-                                <div class="alert alert-success" role="alert"> <i class="fa-solid fa-check"></i> Slug generado </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label for="descripcion">Descripción:</label>
-                            <textarea name="descripcion" id="myeditorinstance" class="form-control" rows="14">{{ $piloto->descripcion }}</textarea>
-                        </div>
-                    </div>
+                    </div>  
                 </div>
                 <!--BOTONES DE ENIVAR Y ELINIMAR-->
                 <br>
@@ -103,7 +78,7 @@
                                 Actualizar</button>
                         </div>
                         <div class="col-md-2">
-                            <a href="{{ url('/entradas-pilotos') }}" class="btn btn-danger"><i
+                            <a href="{{ url('/entradas-reconocimientos') }}" class="btn btn-danger"><i
                                     class="menu-icon fa-solid fa-xmark"></i>
                                 Cancelar</a>
                         </div>
@@ -113,6 +88,7 @@
         </div>
     </div>
 
-    <script src="{{ asset('assets/js/controllerEditBlog.js') }}"></script>
+    <!-- Tu código JavaScript -->
+    <script src="{{ asset('assets/js/controllerEditVehiculos.js') }}"></script>
 
 @endsection

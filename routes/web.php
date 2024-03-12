@@ -9,6 +9,7 @@ use App\Http\Controllers\EquiposController;
 use App\Http\Controllers\MediosController;
 use App\Http\Controllers\PatrocinadoresController;
 use App\Http\Controllers\PilotosController;
+use App\Http\Controllers\ReconocimientosController;
 use Illuminate\Support\Facades\Route;
 
 /*////////////////////////////////////////////////////////////////////////////////*/
@@ -78,7 +79,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/eliminar-piloto/{id}', [PilotosController::class, 'deletePiloto'])->name('pilotos.delete');
     
     //RECONOCIMIENTOS
-
+    Route::get('/entradas-reconocimientos', [ReconocimientosController::class, 'backendVerReconocimientos'])->name('backendReconocimientos.show');
+    Route::get('/nuevo-reconocimiento', [ReconocimientosController::class, 'newReconocimiento']);
+    Route::post('/insertar-reconocimiento', [ReconocimientosController::class, 'addNewReconocimiento']);
+    Route::get('/editar-reconocimiento/{id}', [ReconocimientosController::class, 'editReconocimiento'])->name('reconocimientos.edit');
+    Route::post('/actualizar-reconocimiento/{id}', [ReconocimientosController::class, 'updateReconocimiento'])->name('reconocimientos.update');
+    Route::get('/eliminar-reconocimiento/{id}', [ReconocimientosController::class, 'deleteReconocimiento'])->name('reconocimientos.delete');
 
     //CONFIGURACION
 });
