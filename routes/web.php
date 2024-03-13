@@ -6,6 +6,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\DorsalesController;
 use App\Http\Controllers\EquiposController;
+use App\Http\Controllers\EscritorioController;
 use App\Http\Controllers\MediosController;
 use App\Http\Controllers\PatrocinadoresController;
 use App\Http\Controllers\PilotosController;
@@ -22,9 +23,10 @@ Route::get('/', [VehiculosController::class, 'verVehiculos'])->name('vehiculos.s
 /*////////////////////////////  RUTAS DEL BACKEND  //////////////////////////////*/
 /*////////////////////////////////////////////////////////////////////////////////*/
 Route::middleware('auth')->group(function () {
-    Route::get('/escritorio', function () {
+    Route::get('/escritorio', [EscritorioController::class, 'homeBackend'])->name('homeBackend.show');
+    /*Route::get('/escritorio', function () {
         return view('backend.home');
-    });
+    });*/
     //ENTRADAS DEL BLOG
     Route::get('/entradas', [BlogController::class, 'backendVerPosts'])->name('backendBlog.show');
     Route::get('/nueva-entrada', [BlogController::class, 'newEntrada']);

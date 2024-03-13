@@ -103,7 +103,6 @@
             }, 5000); // 4000 milisegundos = 4 segundos
         });
     </script>-->
-    <x-forms.tinymce-editor/>
 </body>
 
 </html>
