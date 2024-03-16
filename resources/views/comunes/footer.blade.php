@@ -1,42 +1,80 @@
-<footer class="footer mt-auto py-3" style="background-color: #171616; color: white;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <a class="navbar-brand text-white" href="{{ url('/') }}">
-                    <img src="{{ asset('assets/img/icono-lince.png') }}" class="iconoLince-footer">
-                </a>
-            </div>
-            <div class="col-md-3">
-                <h5 class="text-white">Enlaces</h5>
-                <ul class="list-unstyled">
-                    <li><a class="nav-link text-white" href="#">Vehículos</a></li>
-                    <li><a class="nav-link text-white" href="#">Patrocinadores</a></li>
-                    <li><a class="nav-link text-white" href="#">Blog</a></li>
-                    <li><a class="nav-link text-white" href="#">Contacto</a></li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <h5 class="text-white">Redes Sociales</h5>
-                <div class="row">
-                    <div class="col-md-6">
-                        <ul class="list-unstyled">
-                            <li><a class="nav-link text-white" href="#"><i class="fa-brands fa-2x fa-instagram"></i> Instagram</a></li>
-                            <li><a class="nav-link text-white" href="#"><i class="fa-brands fa-2x fa-square-facebook"></i> Facebook</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="list-unstyled">
-                            <li><a class="nav-link text-white" href="#"><i class="fa-brands fa-2x fa-twitter"></i> Twitter</a></li>
-                            <li><a class="nav-link text-white" href="#"><i class="fa-brands fa-2x fa-youtube"></i> Youtube</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>            
-        </div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted" style="background-color: #171616; color: white;">  
+    <!-- Section: Links  -->
+    <section class="pt-2">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
         <div class="row mt-3">
-            <div class="col-md-12 text-center">
-                <p class="mb-0">&copy; 2024 Vehículo Ecológico Lince - Creada por Francisco Manuel Gutiérrez Carmona</p>
-            </div>
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Icono -->
+            <a class="navbar-brand text-white" href="{{ url('/') }}">
+                <img src="{{ asset('assets/img/icono-lince.png') }}" class="iconoLince-footer">
+            </a>
+          </div>
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Conócenos
+            </h6>
+            <p>
+                <a href="#!" class="text-reset">Sobre Nosotros</a>
+            </p>
+            <p>
+                <a href="#!" class="text-reset">Equipos</a>
+            </p>
+            <p>
+                <a href="#!" class="text-reset">Pilotos</a>
+            </p>
+            <p>
+                <a href="#!" class="text-reset">Dorsales</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Enlaces de interés
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Vehículos</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Patrocinadores</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Blog</a>
+            </p>
+            <p>
+                <a href="#!" class="text-reset">Contacto</a>
+              </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Redes Sociales</h6>
+            <p><a href="" class="text-white"><i class="fas fab fa-instagram me-3"></i>Instagram</a></p>
+            <p><a href="" class="text-white"><i class="fas fab fa-facebook-f me-3"></i>Facebook</a></p>
+            <p><a href="" class="text-white"><i class="fas fab fa-twitter me-3"></i>Twitter</a></p>
+            <p><a href="" class="text-white"><i class="fas fab fa-youtube me-3"></i>YouTube</a></p>
+          </div>
+          <!-- Grid column -->
         </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        <p>2024 Vehículo Ecológico Lince - Creada por <a href="https://github.com/francis65000" class="text-white">Francisco Manuel Gutiérrez Carmona</a></p>
     </div>
-</footer>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
