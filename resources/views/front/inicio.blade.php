@@ -4,9 +4,9 @@
 
 @section('content')
     @include('layouts.slider')
-    <div class=" custom-margin">
-        <div class="bg-warning row">
-            <div class="col-md-6 mx-2">
+    <div class="custom-margin mx-auto"> <!-- Agrega la clase mx-auto para centrar horizontalmente -->
+        <div class="row justify-content-center">
+            <div class="col-md-5"> <!-- Quita mx-2 para eliminar el margen -->
                 <!-- Contenido de la primera columna -->
                 <h1>Sobre Nosotros</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis ipsum sed erat tempus, et
@@ -17,33 +17,95 @@
             </div>
             <div class="col-md-4">
                 <!-- Contenido de la segunda columna -->
-                <img src="{{ asset('assets/img/equipo_2014.jpg') }}" class="imagenes" alt="Responsive image">
+                @foreach ($medios as $medio)
+                    @if ($ultimoEquipo->id_imagen == $medio->id)
+                        <img src="{{ asset('assets/uploads/' . $medio->nombre) }}" class="imagenes img-fluid"
+                            alt="{{ $medio->nombre }}" style="max-width: 90%; height: auto;">
+                    @endif
+                @endforeach
             </div>
         </div>
-        <div class="row">
+        <br>
+        <div class="row justify-content-center">
             <div class="col-md-12">
                 <!-- Contenido de la primera columna -->
                 <h2 class="text-center">Todos nuestros vehículos</h2>
-                <div class="bg-success">
+                <div class="row justify-content-center">
                     @foreach ($vehiculos as $vehiculo)
-                        <a href="{{ url('vehiculos/'.$vehiculo->id) }}">
-                            <div class="card" style="width: 18rem;">
-                                @foreach ($medios as $medio)
-                                    @if ($vehiculo->id_imagen == $medio->id)
-                                        <img src="{{ asset('assets/uploads/' . $medio->nombre) }}" class="card-img-top"
-                                            alt={{ $medio->nombre }}>
-                                    @endif
-                                @endforeach
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $vehiculo->nombreVehiculo }}</h5>
+                        <div class="col-md-2 mb-4">
+                            <a href="{{ url('vehiculos/' . $vehiculo->slug) }}">
+                                <div class="card" style="width: auto; height: 200px;"> <!-- Cambia los valores de width y height según sea necesario -->
+                                    @foreach ($medios as $medio)
+                                        @if ($vehiculo->id_imagen == $medio->id)
+                                            <img src="{{ asset('assets/uploads/' . $medio->nombre) }}" class="card-img-top card-img-bottom img-fluid"
+                                                alt="{{ $medio->nombre }}" style="width: 100%; height: 100%; object-fit: cover;">
+                                        @endif
+                                    @endforeach
                                 </div>
-                            </div>
-                        </a>
+                                <h5 class="text-center mt-2">{{ $vehiculo->nombreVehiculo }}</h5>
+                            </a>
+                        </div>
                     @endforeach
                 </div>
             </div>
-
         </div>
     </div>
+    <div class="fondo-gris pb-4">
+        <div class="custom-margin">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <!-- Contenido de la primera columna -->
+                    <h2 class="text-center">Todos nuestros pilotos</h2>
+                    <div class="row justify-content-center">
+                        @foreach ($pilotos as $piloto)
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    @foreach ($medios as $medio)
+                                        @if ($piloto->id_imagen == $medio->id)
+                                            <img src="{{ asset('assets/uploads/' . $medio->nombre) }}"
+                                                class="card-img-top card-img-bottom" alt="{{ $medio->nombre }}">
+                                        @endif
+                                    @endforeach
+                                </div>
+                                <h5 class="text-center">{{ $piloto->nombre }}</h5>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-6 mx-auto">
+                            <!-- Puedes ajustar el tamaño del contenedor según tus necesidades -->
+                            <a href="{{ url('pilotos') }}" class="boton-negro btn-block">Pilotos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="custom-margin">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <!-- Contenido de la primera columna -->
+                    <h2 class="text-center">Patrocinadores</h2>
+                    <div class="row justify-content-center"> <!-- Alineación horizontal al centro -->
+                        @foreach ($patrocinadores as $patrocinador)
+                            <div class="col-md-2 mb-4">
+                                <div class="card">
+                                    @foreach ($medios as $medio)
+                                        @if ($patrocinador->id_imagen == $medio->id)
+                                            <img src="{{ asset('assets/uploads/' . $medio->nombre) }}"
+                                                class="card-img-top card-img-bottom" alt="{{ $medio->nombre }}">
+                                        @endif
+                                    @endforeach
+                                </div>
+                                <h5 class="text-center">{{ $patrocinador->nombre }}</h5>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 @endsection

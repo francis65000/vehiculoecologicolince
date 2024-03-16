@@ -60,6 +60,9 @@
         <div>
             @yield('content')
         </div>
+        <div>
+            @include('comunes.footer')
+        </div>
     </div>
 
 

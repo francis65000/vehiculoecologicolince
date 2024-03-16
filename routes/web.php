@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\DorsalesController;
 use App\Http\Controllers\EquiposController;
 use App\Http\Controllers\EscritorioController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\MediosController;
 use App\Http\Controllers\PatrocinadoresController;
 use App\Http\Controllers\PilotosController;
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 /*////////////////////////////  RUTAS DEL FRONTEND  //////////////////////////////*/
 /*////////////////////////////////////////////////////////////////////////////////*/
 
-Route::get('/', [VehiculosController::class, 'verVehiculos'])->name('vehiculos.show');
+Route::get('/', [FrontController::class, 'verHome'])->name('front.show');
 
 /*////////////////////////////////////////////////////////////////////////////////*/
 /*////////////////////////////  RUTAS DEL BACKEND  //////////////////////////////*/
