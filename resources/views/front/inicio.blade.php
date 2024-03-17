@@ -14,6 +14,18 @@
                     a tempus purus congue maximus. Vestibulum non lectus nisi. Donec euismod, tortor at fermentum sagittis,
                     tellus neque sollicitudin enim, vitae accumsan sapien turpis id sem. Vivamus vel pretium urna, efficitur
                     dapibus orci.</p>
+                <h2>Shell Eco-Marathon 2024</h2>
+                <div class="d-flex justify-content-left align-items-center">
+                    <div class="bg-custom text-white p-3 rounded me-3">
+                        <h3 class="mb-0 text-white">Faltan</h3>
+                    </div>
+                    <div class="bg-light p-3 rounded me-3">
+                        <h3 class="mb-0 ">20</h3>
+                    </div>
+                    <div class="bg-custom text-white p-3 rounded">
+                        <h3 class="mb-0 text-white">días</h3>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4">
                 <!-- Contenido de la segunda columna -->

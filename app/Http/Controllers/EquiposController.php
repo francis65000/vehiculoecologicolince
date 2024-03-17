@@ -100,4 +100,12 @@ class EquiposController extends Controller
 
         return redirect('/entradas-equipos');
     }
+
+    //METODO DELETE PARA ELIMINAR UN EQUIPO
+    public function deleteEquipo(Request $request, $id)
+    {
+        $equipo = Equipo::find($id);
+        $equipo->delete();
+        return redirect('/entradas-equipos');
+    }
 }

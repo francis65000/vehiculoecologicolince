@@ -20,6 +20,26 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontController::class, 'verHome'])->name('front.show');
 
+//Submenu conocenos
+Route::get('/conocenos/sobre-nosotros', [FrontController::class, 'verConocenos'])->name('frontConocenos.show');
+Route::get('/conocenos/equipos', [FrontController::class, 'verEquipo'])->name('frontEquipo.show');
+Route::get('/conocenos/pilotos', [FrontController::class, 'verPilotos'])->name('frontPilotos.show');
+Route::get('/conocenos/dorsales', [FrontController::class, 'verDorsales'])->name('frontDorsales.show');
+
+Route::get('/vehiculos', [FrontController::class, 'verVehiculos'])->name('frontVehiculos.show');
+Route::get('/patrocinadores', [FrontController::class, 'verPatrocinadores'])->name('frontPatrocinadores.show');
+
+Route::get('/blog', [FrontController::class, 'verBlog'])->name('frontBlog.show');
+Route::get('/blog/{slug}', [FrontController::class, 'verPost'])->name('frontPost.show');
+
+Route::get('/reconocimientos', [FrontController::class, 'verReconocimientos'])->name('frontReconocimientos.show');
+
+Route::get('/contacto', [FrontController::class, 'verContacto'])->name('frontContacto.show');
+
+
+
+
+
 /*////////////////////////////////////////////////////////////////////////////////*/
 /*////////////////////////////  RUTAS DEL BACKEND  //////////////////////////////*/
 /*////////////////////////////////////////////////////////////////////////////////*/
