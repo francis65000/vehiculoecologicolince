@@ -92,7 +92,11 @@ body {
     font-size: 1.25rem; /* Ajusta el tamaño de la fuente para hacer el botón más grande */
     color: black;
 }
-
+/*Página de Sobre nosotros imagenes*/
+.igual-tamaño {
+    width: auto; /* ajusta según tu necesidad */
+    height: 200px; /* ajusta según tu necesidad */
+}
 /*////////////////VISTAS RESPONSIVE////////////////*/
 
 /* Para tabletas */

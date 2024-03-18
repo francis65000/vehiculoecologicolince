@@ -32,7 +32,7 @@
     <div class="container-fluid p-0">
         <div class="jumbotron jumbotron-fluid imagenCabeceraBlog text-white">
             <div class="container p-5">
-                <h1 class="text-center p-5 text-white">Blog</h1>
+                <h1 class="text-center p-5 text-white font-weight-bold">Blog</h1>
             </div>
         </div>
     </div>

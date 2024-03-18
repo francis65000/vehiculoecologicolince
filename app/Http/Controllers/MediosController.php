@@ -14,7 +14,7 @@ class MediosController extends Controller
     public function viewMedios()
     {
 
-        $medios = Medios::all();
+        $medios = Medios::orderBy('created_at', 'desc')->get();
 
         return view('backend.medios', compact('medios'));
     }

@@ -9,6 +9,7 @@ use App\Models\Pilotos;
 use App\Models\Equipo;
 use App\Models\Patrocinadores;
 use App\Models\Blog;
+use App\Models\Dorsales;
 
 use Carbon\Carbon;
 
@@ -43,11 +44,11 @@ class FrontController extends Controller
         //PASAMOS LOS DATOS A LA VISTA
         $fecha_actual = Carbon::now();
         $blogs = Blog::whereDate('fecha_publicacion', '<=', $fecha_actual)
-                  ->orderByDesc('fecha_publicacion')
-                  ->paginate(10);
+            ->orderByDesc('fecha_publicacion')
+            ->paginate(10);
         $medios = Medios::all();
         $totalBlogs = Blog::count();
-        return view('front.blog', compact('medios','blogs','totalBlogs'));
+        return view('front.blog', compact('medios', 'blogs', 'totalBlogs'));
     }
 
     //VER UNA ENTRADA DE BLOG
@@ -57,5 +58,26 @@ class FrontController extends Controller
         $medios = Medios::all();
         $blog = Blog::find($id);
         return view('front.post', compact('medios', 'blog'));
+    }
+
+    //PÁGINA DE SOBRE NOSOTROS
+    public function verConocenos(Request $request)
+    {
+        //PASAMOS LOS DATOS A LA VISTA
+        // Obtener el último equipo
+        $ultimoEquipo = Equipo::latest()->first();
+
+        // Obtener el último piloto
+        $ultimoPiloto = Pilotos::latest()->first();
+
+        // Obtener la última dorsal registrada
+        $ultimaDorsal = Dorsales::latest()->first();
+
+        // Obtener la última dorsal registrada
+        $ultimoVehiculo = Vehiculos::latest()->first();
+
+        // Pasar los datos a la vista
+        $medios = Medios::all();
+        return view('front.sobreNosotros', compact('medios', 'ultimoEquipo', 'ultimoPiloto', 'ultimaDorsal', 'ultimoVehiculo'));
     }
 }

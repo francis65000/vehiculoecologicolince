@@ -67,7 +67,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <!-- Contenido de la primera columna -->
-                    <h2 class="text-center">Todos nuestros pilotos</h2>
+                    <h2 class="text-center text-white">Todos nuestros pilotos</h2>
                     <div class="row justify-content-center">
                         @foreach ($pilotos as $piloto)
                             <div class="col-md-2 mb-4">
