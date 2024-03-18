@@ -16,7 +16,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
                     <li><a class="dropdown-item text-white" href="{{url('/conocenos/sobre-nosotros')}}">Sobre nosotros</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Equipos</a></li>
+                    <li><a class="dropdown-item text-white" href="{{url('/conocenos/equipos')}}">Equipos</a></li>
                     <li><a class="dropdown-item text-white" href="#">Pilotos</a></li>
                     <li><a class="dropdown-item text-white" href="#">Dorsales</a></li>
                 </ul>

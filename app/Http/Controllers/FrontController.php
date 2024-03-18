@@ -33,7 +33,7 @@ class FrontController extends Controller
     public function verVehiculos(Request $request)
     {
         //PASAMOS LOS DATOS A LA VISTA
-        $vehiculos = Vehiculos::all();
+        $vehiculos = Vehiculos::all()->reverse();
         $medios = Medios::all();
         return view('front.vehiculos', compact('vehiculos', 'medios'));
     }
@@ -79,5 +79,14 @@ class FrontController extends Controller
         // Pasar los datos a la vista
         $medios = Medios::all();
         return view('front.sobreNosotros', compact('medios', 'ultimoEquipo', 'ultimoPiloto', 'ultimaDorsal', 'ultimoVehiculo'));
+    }
+
+    //PÁGINA DE EQUIPO
+    public function verEquipo(Request $request)
+    {
+        //PASAMOS LOS DATOS A LA VISTA
+        $equipos = Equipo::all()->reverse();
+        $medios = Medios::all();
+        return view('front.equipos', compact('equipos', 'medios'));
     }
 }
