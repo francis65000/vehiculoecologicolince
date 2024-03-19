@@ -41,16 +41,16 @@
               Enlaces de interés
             </h6>
             <p>
-              <a href="#!" class="text-reset">Vehículos</a>
+              <a href="{{url('vehiculos')}}" class="text-reset">Vehículos</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Patrocinadores</a>
+              <a href="#!" class="text-reset">Reconocomientos</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Blog</a>
+              <a href="{{url('blog')}}" class="text-reset">Blog</a>
             </p>
             <p>
-                <a href="#!" class="text-reset">Contacto</a>
+                <a href="{{url('contacto')}}" class="text-reset">Contacto</a>
               </p>
           </div>
           <!-- Grid column -->

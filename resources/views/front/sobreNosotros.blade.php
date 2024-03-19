@@ -25,7 +25,6 @@
         .imagenCabeceraBlog .container {
             position: relative;
             /* Asegura que el contenido se posicione correctamente */
-            z-index: 2;
             /* Asegura que el contenido esté por encima de la superposición */
         }
     </style>
@@ -77,7 +76,7 @@
                         @endif
                     @endforeach
                     <div class="mt-3">
-                        <a href="{{ url('pilotos') }}" class="boton-negro btn-block">Pilotos</a>
+                        <a href="{{ url('/conocenos/pilotos') }}" class="boton-negro btn-block">Pilotos</a>
                     </div>
                 </div>
                 <div class="col-md-3 text-center">
@@ -88,7 +87,7 @@
                         @endif
                     @endforeach
                     <div class="mt-3">
-                        <a href="{{ url('equipos') }}" class="boton-negro btn-block">Equipos</a>
+                        <a href="{{url('/conocenos/equipos')}}" class="boton-negro btn-block">Equipos</a>
                     </div>
                 </div>
                 <div class="col-md-3 text-center">
@@ -110,7 +109,7 @@
                         @endif
                     @endforeach
                     <div class="mt-3">
-                        <a href="{{ url('dorsales') }}" class="boton-negro btn-block">Dorsales</a>
+                        <a href="{{ url('/conocenos/dorsales') }}" class="boton-negro btn-block">Dorsales</a>
                     </div>
                 </div>
             </div>

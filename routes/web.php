@@ -35,6 +35,7 @@ Route::get('/blog/{slug}', [FrontController::class, 'verPost'])->name('frontPost
 Route::get('/reconocimientos', [FrontController::class, 'verReconocimientos'])->name('frontReconocimientos.show');
 
 Route::get('/contacto', [FrontController::class, 'verContacto'])->name('frontContacto.show');
+Route::post('/enviar-formulario', [FrontController::class, 'enviarContacto'])->name('frontContacto.send');
 
 
 

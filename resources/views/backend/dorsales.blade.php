@@ -12,6 +12,7 @@
                 <thead>
                     <tr>
                         <th>Año</th>
+                        <th>Descripción</th>
                         <th>Fecha de publicación</th>
                         <th colspan="2">Acciones</th>
                     </tr>
@@ -20,6 +21,7 @@
                     @foreach ($dorsales as $post)
                         <tr>
                             <td>{{ $post->anio }}</td>
+                            <td>{!! $post->descripcion !!}</td>
                             <td>
                                 {{ $post->created_at }}
                             </td>

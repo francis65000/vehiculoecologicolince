@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Models\Vehiculos;
 use App\Models\Medios;
@@ -10,6 +11,8 @@ use App\Models\Equipo;
 use App\Models\Patrocinadores;
 use App\Models\Blog;
 use App\Models\Dorsales;
+
+use App\Mail\FormularioEnviado;
 
 use Carbon\Carbon;
 
@@ -89,4 +92,56 @@ class FrontController extends Controller
         $medios = Medios::all();
         return view('front.equipos', compact('equipos', 'medios'));
     }
+
+    //PÁGINA DE CONTACTO
+    public function verContacto(Request $request)
+    {
+        //PASAMOS LOS DATOS A LA VISTA
+        $medios = Medios::all();
+        return view('front.contacto', compact('medios'));
+    }
+
+    //PÁGINA DE DORSALES
+    public function verDorsales(Request $request)
+    {
+        //PASAMOS LOS DATOS A LA VISTA
+        $dorsales = Dorsales::all()->reverse();
+        $medios = Medios::all();
+        return view('front.dorsales', compact('dorsales', 'medios'));
+    }
+
+    //ENVIAR FORMULARIO DE CONTACTO
+    public function enviarContacto(Request $request)
+    {
+        //VALIDAMOS LOS DATOS
+        $request->validate([
+            'nombre' => 'required',
+            'email' => 'required|email',
+            'asunto' => 'required',
+            'telefono' => 'required',
+            'comentario' => 'required'
+        ]);
+
+        //ENVIAMOS EL CORREO
+        
+        $datosFormulario = [
+            'nombre' => $request->nombre,
+            'email' => $request->email,
+            'asunto' => $request->asunto,
+            'telefono' => $request->telefono,
+            'comentario' => $request->comentario
+        ];
+
+        try {
+            // Envío del correo electrónico
+            Mail::to('franciscomanuel0052@gmail.com')->send(new FormularioEnviado($datosFormulario));
+            
+            // Si se envía correctamente, mostrar mensaje de éxito
+            return redirect()->url('contacto')->with('success', 'El formulario se ha enviado correctamente. ¡Gracias!');
+        } catch (\Exception $e) {
+            // Si ocurre un error, mostrar mensaje de error
+            return redirect()->url('contacto')->with('error', 'Ha ocurrido un error al enviar el formulario. Por favor, inténtalo de nuevo.');
+        }
+    }
+
 }

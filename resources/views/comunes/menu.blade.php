@@ -11,21 +11,18 @@
         <ul class="navbar-nav mr-auto menuPrincipal">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown1" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
+                   data-bs-toggle="dropdown" aria-expanded="false">
                     Conócenos
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                <ul class="dropdown-menu submenuInicio" aria-labelledby="navbarDropdown1">
                     <li><a class="dropdown-item text-white" href="{{url('/conocenos/sobre-nosotros')}}">Sobre nosotros</a></li>
                     <li><a class="dropdown-item text-white" href="{{url('/conocenos/equipos')}}">Equipos</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Pilotos</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Dorsales</a></li>
+                    <li><a class="dropdown-item text-white" href="{{url('/conocenos/pilotos')}}">Pilotos</a></li>
+                    <li><a class="dropdown-item text-white" href="{{url('/conocenos/dorsales')}}">Dorsales</a></li>
                 </ul>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{url('vehiculos')}}">Vehículos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#">Patrocinadores</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{url('blog')}}">Blog</a>
@@ -34,7 +31,7 @@
                 <a class="nav-link text-white" href="{{url('reconocimientos')}}">Reconocimientos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">Contacto</a>
+                <a class="nav-link text-white" href="{{url('contacto')}}">Contacto</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="https://lince-jandula.blogspot.com/" target="_blank">Web Antigua</a>
@@ -42,16 +39,16 @@
         </ul>
         <ul class="navbar-nav ml-auto menuRedesSociales">
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fab fa-instagram"></i></a>
+                <a class="nav-link text-white" href="#"><i class="fab fa-instagram fa-lg"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fab fa-facebook-square"></i></a>
+                <a class="nav-link text-white" href="#"><i class="fab fa-facebook-square fa-lg"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="nav-link text-white" href="#"><i class="fab fa-twitter fa-lg"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fab fa-youtube"></i></a>
+                <a class="nav-link text-white" href="#"><i class="fab fa-youtube fa-lg"></i></a>
             </li>
         </ul>
     </div>

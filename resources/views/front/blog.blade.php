@@ -25,7 +25,6 @@
         .imagenCabeceraBlog .container {
             position: relative;
             /* Asegura que el contenido se posicione correctamente */
-            z-index: 2;
             /* Asegura que el contenido esté por encima de la superposición */
         }
     </style>
