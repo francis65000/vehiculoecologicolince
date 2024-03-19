@@ -19,7 +19,7 @@
                 <tbody>
                     @foreach ($reconocimientos as $post)
                         <tr>
-                            <td>{{ $post->nombreReconocimiento }}</td>
+                            <td class="maximoColumna">{{ $post->nombreReconocimiento }}</td>
                             <td>
                                 {{ $post->fecha }}
                             </td>

@@ -187,3 +187,11 @@ body {
     background-color: rgb(0, 101, 156);
     border-color: rgb(0, 101, 156);
 }
+
+/*TABLA DE RECONOCIMIENTOS ANCHO COLUMNA NOMBRE*/
+.maximoColumna{
+    max-width: 600px; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}

@@ -68,8 +68,8 @@
             @endforeach
         </div>
         <!-- Paginación -->
-        <div class="d-flex justify-content-center">
-            {{ $blogs->links() }}
+        <div class="d-flex justify-content-center mt-4">
+            {{ $blogs->links('pagination::bootstrap-4') }}
         </div>
     </div>
 

@@ -13,7 +13,7 @@ use App\Models\Blog;
 use App\Models\Dorsales;
 
 use App\Mail\FormularioEnviado;
-
+use App\Models\Reconocimientos;
 use Carbon\Carbon;
 
 class FrontController extends Controller
@@ -93,14 +93,6 @@ class FrontController extends Controller
         return view('front.equipos', compact('equipos', 'medios'));
     }
 
-    //PÁGINA DE CONTACTO
-    public function verContacto(Request $request)
-    {
-        //PASAMOS LOS DATOS A LA VISTA
-        $medios = Medios::all();
-        return view('front.contacto', compact('medios'));
-    }
-
     //PÁGINA DE DORSALES
     public function verDorsales(Request $request)
     {
@@ -108,6 +100,23 @@ class FrontController extends Controller
         $dorsales = Dorsales::all()->reverse();
         $medios = Medios::all();
         return view('front.dorsales', compact('dorsales', 'medios'));
+    }
+
+    //PÁGINA DE RECONOCIMIENTOS
+    public function verReconocimientos(Request $request)
+    {
+        //PASAMOS LOS DATOS A LA VISTA
+        $reconocimientos = Reconocimientos::orderBy('id', 'DESC')->paginate(10);
+        $medios = Medios::all();
+        return view('front.reconocimientos', compact('reconocimientos','medios'));
+    }
+
+    //PÁGINA DE CONTACTO
+    public function verContacto(Request $request)
+    {
+        //PASAMOS LOS DATOS A LA VISTA
+        $medios = Medios::all();
+        return view('front.contacto', compact('medios'));
     }
 
     //ENVIAR FORMULARIO DE CONTACTO
@@ -123,7 +132,7 @@ class FrontController extends Controller
         ]);
 
         //ENVIAMOS EL CORREO
-        
+
         $datosFormulario = [
             'nombre' => $request->nombre,
             'email' => $request->email,
@@ -135,7 +144,7 @@ class FrontController extends Controller
         try {
             // Envío del correo electrónico
             Mail::to('franciscomanuel0052@gmail.com')->send(new FormularioEnviado($datosFormulario));
-            
+
             // Si se envía correctamente, mostrar mensaje de éxito
             return redirect()->url('contacto')->with('success', 'El formulario se ha enviado correctamente. ¡Gracias!');
         } catch (\Exception $e) {
@@ -143,5 +152,4 @@ class FrontController extends Controller
             return redirect()->url('contacto')->with('error', 'Ha ocurrido un error al enviar el formulario. Por favor, inténtalo de nuevo.');
         }
     }
-
 }

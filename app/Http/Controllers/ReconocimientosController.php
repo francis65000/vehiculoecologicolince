@@ -23,7 +23,7 @@ class ReconocimientosController extends Controller
     //VER TODOS LOS RECONOCIMIENTOS EN EL BACKEND
     public function backendVerReconocimientos(Request $request)
     {
-        $reconocimientos = Reconocimientos::orderBy('fecha', 'desc')->get();
+        $reconocimientos = Reconocimientos::all()->reverse();
 
         return view('backend.reconocimientos', compact('reconocimientos'));
     }
@@ -31,7 +31,7 @@ class ReconocimientosController extends Controller
     //NUEVO RECONOCIMIENTO
     public function newReconocimiento()
     {
-        $medios = Medios::all();
+        $medios = Medios::all()->reverse();
         return view('backend.nuevoReconocimiento', compact('medios'));
     }
 
@@ -58,7 +58,7 @@ class ReconocimientosController extends Controller
     public function editReconocimiento(Request $request)
     {
         $reconocimiento = Reconocimientos::find($request->id);
-        $medios = Medios::all();
+        $medios = Medios::all()->reverse();
         return view('backend.editarReconocimiento', compact('reconocimiento', 'medios'));
     }
 
