@@ -40,7 +40,7 @@
             </li>
             @if (Auth::check())
                 <li class="nav-item">
-                    <a href="{{ url('/escritorio') }}" class="btn btn-primary">
+                    <a href="{{ url('/escritorio') }}" class="mx-3 btn btn-primary nav-link">
                         <i class="menu-icon fa-solid fa-table-columns"></i>
                         <div data-i18n="Dashboards">Escritorio</div>
                     </a>
@@ -48,7 +48,7 @@
                 <li class="nav-item">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit" class="btn btn-danger">
+                        <button type="submit" class="mx-2 btn btn-danger nav-link">
                             <i class="menu-icon fa-solid fa-right-from-bracket"></i>
                             Cerrar sesión
                         </button>
