@@ -14,20 +14,18 @@
                     a tempus purus congue maximus. Vestibulum non lectus nisi. Donec euismod, tortor at fermentum sagittis,
                     tellus neque sollicitudin enim, vitae accumsan sapien turpis id sem. Vivamus vel pretium urna, efficitur
                     dapibus orci.</p>
-                <h2>Shell Eco-Marathon 2024</h2>
                 <div class="d-flex justify-content-left align-items-center">
-                    <div class="bg-custom text-white p-3 rounded me-3">
-                        <h3 class="mb-0 text-white">Faltan</h3>
-                    </div>
-                    <div class="bg-light p-3 rounded me-3">
-                        <h3 class="mb-0 ">20</h3>
-                    </div>
-                    <div class="bg-custom text-white p-3 rounded">
-                        <h3 class="mb-0 text-white">días</h3>
+                    @foreach ($contadores as $contador)
+                        <h3 class="text-center">Shell Eco-Marathon {{ $contador->anio_competicion }}</h3>
+                    @endforeach
+                    <!--CAJA DEL CONTADOR-->
+                    <div class="btn-primary h2 text-white p-3 rounded m-5 text-center" id="countdown">
+
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
+
                 <!-- Contenido de la segunda columna -->
                 @foreach ($medios as $medio)
                     @if ($ultimoEquipo->id_imagen == $medio->id)
@@ -46,11 +44,13 @@
                     @foreach ($vehiculos as $vehiculo)
                         <div class="col-md-2 mb-4">
                             <a href="{{ url('vehiculos/' . $vehiculo->slug) }}">
-                                <div class="card" style="width: auto; height: 200px;"> <!-- Cambia los valores de width y height según sea necesario -->
+                                <div class="card" style="width: auto; height: 200px;">
+                                    <!-- Cambia los valores de width y height según sea necesario -->
                                     @foreach ($medios as $medio)
                                         @if ($vehiculo->id_imagen == $medio->id)
-                                            <img src="{{ asset('assets/uploads/' . $medio->nombre) }}" class="card-img-top card-img-bottom img-fluid"
-                                                alt="{{ $medio->nombre }}" style="width: 100%; height: 100%; object-fit: cover;">
+                                            <img src="{{ asset('assets/uploads/' . $medio->nombre) }}"
+                                                class="card-img-top card-img-bottom img-fluid" alt="{{ $medio->nombre }}"
+                                                style="width: 100%; height: 100%; object-fit: cover;">
                                         @endif
                                     @endforeach
                                 </div>
@@ -118,6 +118,28 @@
             </div>
         </div>
     </div>
+    <script>
+        function updateCountdown(counter) {
+            let now = new Date().getTime();
+            let distance = counter - now;
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(interval);
+                document.getElementById("countdown").innerHTML = "The time is now!";
+                // Puedes agregar aquí acciones adicionales cuando la fecha límite expire
+            }
+        }
+
+        let counter = new Date("{{ $contador->counter }}").getTime();
+        let interval = setInterval(function() {
+            updateCountdown(counter);
+        }, 1000);
+    </script>
 
 @endsection

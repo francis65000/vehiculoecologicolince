@@ -11,6 +11,7 @@ use App\Models\Equipo;
 use App\Models\Patrocinadores;
 use App\Models\Blog;
 use App\Models\Dorsales;
+use App\Models\Contadores;
 
 use App\Mail\FormularioEnviado;
 use App\Models\Reconocimientos;
@@ -28,8 +29,9 @@ class FrontController extends Controller
         $pilotos = Pilotos::latest()->take(4)->get();
         $patrocinadores = Patrocinadores::all();
         $medios = Medios::all();
+        $contadores = Contadores::all();
 
-        return view('front.inicio', compact('vehiculos', 'medios', 'pilotos', 'equios', 'patrocinadores', 'ultimoEquipo'));
+        return view('front.inicio', compact('vehiculos', 'medios', 'pilotos', 'equios', 'patrocinadores', 'ultimoEquipo', 'contadores'));
     }
 
     //PÁGINA DE VEHÍCULOS
