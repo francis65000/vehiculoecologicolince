@@ -58,16 +58,16 @@
         </ul>
         <ul class="navbar-nav ml-auto menuRedesSociales">
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                <a class="nav-link text-white" href="https://www.instagram.com/linceteamjandula/?hl=es" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fab fa-facebook-square fa-lg"></i></a>
+                <a class="nav-link text-white" href="https://m.facebook.com/people/Veh%C3%ADculo-Ecol%C3%B3gico-Lince/100057685771001/" target="_blank"><i class="fab fa-facebook-square fa-lg"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fab fa-twitter fa-lg"></i></a>
+                <a class="nav-link text-white" href="https://twitter.com/linceiesjandula?lang=es" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fab fa-youtube fa-lg"></i></a>
+                <a class="nav-link text-white" href="https://www.youtube.com/@jandulatv" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
             </li>
         </ul>
     </div>

@@ -7,7 +7,7 @@
     <div class="container">
         <div class="card">
             <div class="card-body text-center">
-                <h2>Escritorio LinceOS 1.2.4</h2>
+                <h2>Escritorio LinceOS</h2><p>v 1.2.4</p>
             </div>
         </div>
     </div>

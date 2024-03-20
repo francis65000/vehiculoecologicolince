@@ -59,10 +59,10 @@
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">Redes Sociales</h6>
-            <p><a href="" class="text-white"><i class="fas fab fa-instagram me-3"></i>Instagram</a></p>
-            <p><a href="" class="text-white"><i class="fas fab fa-facebook-f me-3"></i>Facebook</a></p>
-            <p><a href="" class="text-white"><i class="fas fab fa-twitter me-3"></i>Twitter</a></p>
-            <p><a href="" class="text-white"><i class="fas fab fa-youtube me-3"></i>YouTube</a></p>
+            <p><a href="https://www.instagram.com/linceteamjandula/?hl=es" target="_blank" class="text-white"><i class="fas fab fa-instagram me-3"></i>Instagram</a></p>
+            <p><a href="https://m.facebook.com/people/Veh%C3%ADculo-Ecol%C3%B3gico-Lince/100057685771001/" target="_blank" class="text-white"><i class="fas fab fa-facebook-f me-3"></i>Facebook</a></p>
+            <p><a href="https://twitter.com/linceiesjandula?lang=es" target="_blank" class="text-white"><i class="fas fab fa-twitter me-3"></i>Twitter</a></p>
+            <p><a href="https://www.youtube.com/@jandulatv" target="_blank" class="text-white"><i class="fas fab fa-youtube me-3"></i>YouTube</a></p>
           </div>
           <!-- Grid column -->
         </div>

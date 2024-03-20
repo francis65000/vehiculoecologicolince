@@ -9,11 +9,10 @@
             <div class="col-md-5"> <!-- Quita mx-2 para eliminar el margen -->
                 <!-- Contenido de la primera columna -->
                 <h1>Sobre Nosotros</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis ipsum sed erat tempus, et
-                    faucibus tortor tincidunt. Phasellus eget eleifend enim, id faucibus risus. Maecenas consequat elit dui,
-                    a tempus purus congue maximus. Vestibulum non lectus nisi. Donec euismod, tortor at fermentum sagittis,
-                    tellus neque sollicitudin enim, vitae accumsan sapien turpis id sem. Vivamus vel pretium urna, efficitur
-                    dapibus orci.</p>
+                <p>¿QUIENES SOMOS? Desarrollamos un proyecto educativo consistente en el diseño, construcción, pruebas y
+                    conducción de vehículos ecológicos con los que participamos en competiciones de vehículos eficientes de
+                    bajo consumo. El equipo está formado por profesores y alumnos de 1º de Bachillerato de Ciencias y
+                    Tecnología del I.E.S. "Jándula" de Andújar (Jaén) que cursan la asignatura Tecnología Industrial.</p>
                 <div class="row">
                     <div class="col-md-8">
                         <div class="justify-content-left align-items-center">
@@ -22,7 +21,7 @@
                             @endforeach
                             <!--CAJA DEL CONTADOR-->
                             <div class="btn-primary h2 text-white p-3 mx-5 rounded text-center" id="countdown">
-        
+
                             </div>
                         </div>
                     </div>
@@ -47,21 +46,25 @@
                 <div class="row justify-content-center">
                     @foreach ($vehiculos as $vehiculo)
                         <div class="col-md-2 mb-4">
-                            <a href="{{ url('vehiculos/' . $vehiculo->slug) }}">
-                                <div class="card" style="width: auto; height: 200px;">
-                                    <!-- Cambia los valores de width y height según sea necesario -->
-                                    @foreach ($medios as $medio)
-                                        @if ($vehiculo->id_imagen == $medio->id)
-                                            <img src="{{ asset('assets/uploads/' . $medio->nombre) }}"
-                                                class="card-img-top card-img-bottom img-fluid" alt="{{ $medio->nombre }}"
-                                                style="width: 100%; height: 100%; object-fit: cover;">
-                                        @endif
-                                    @endforeach
-                                </div>
-                                <h5 class="text-center mt-2">{{ $vehiculo->nombreVehiculo }}</h5>
-                            </a>
+                            <div class="card" style="width: auto; height: 200px;">
+                                <!-- Cambia los valores de width y height según sea necesario -->
+                                @foreach ($medios as $medio)
+                                    @if ($vehiculo->id_imagen == $medio->id)
+                                        <img src="{{ asset('assets/uploads/' . $medio->nombre) }}"
+                                            class="card-img-top card-img-bottom img-fluid" alt="{{ $medio->nombre }}"
+                                            style="width: 100%; height: 100%; object-fit: cover;">
+                                    @endif
+                                @endforeach
+                            </div>
+                            <h5 class="text-center mt-2">{{ $vehiculo->nombreVehiculo }}</h5>
                         </div>
                     @endforeach
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-6 mx-auto mb-3">
+                        <!-- Puedes ajustar el tamaño del contenedor según tus necesidades -->
+                        <a href="{{ url('vehiculos') }}" class="boton-blanco-inicio mt-4">Vehículos</a>
+                    </div>
                 </div>
             </div>
         </div>

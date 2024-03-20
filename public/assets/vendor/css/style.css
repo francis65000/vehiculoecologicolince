@@ -112,6 +112,22 @@ body {
     font-size: 1.25rem; /* Ajusta el tamaño de la fuente para hacer el botón más grande */
     color: white;
 }
+
+.boton-blanco-inicio{
+    background-color: black;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1.5rem; /* Ajusta el padding para hacer el botón más grande */
+    font-size: 1.25rem; /* Ajusta el tamaño de la fuente para hacer el botón más grande */
+    color: white;
+}
+
+.boton-blanco-inicio:hover {
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 0.25rem;
+    font-size: 1.25rem; /* Ajusta el tamaño de la fuente para hacer el botón más grande */
+    color: black;
+}
 /*Página de Sobre nosotros imagenes*/
 .igual-tamaño {
     width: auto; /* ajusta según tu necesidad */
