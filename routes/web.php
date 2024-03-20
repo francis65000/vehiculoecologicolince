@@ -111,6 +111,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/eliminar-reconocimiento/{id}', [ReconocimientosController::class, 'deleteReconocimiento'])->name('reconocimientos.delete');
 
     //CONFIGURACION
+
+    //USUARIOS
+
+    //CONTADOR
+    Route::get('/configuracion/contador', [EscritorioController::class, 'contador'])->name('contador.show');
 });
 
 /*////////////////////////////////////////////////////////////////////////////////*/

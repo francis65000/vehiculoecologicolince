@@ -35,7 +35,7 @@
             </div>
         </div>
     </div>
-    <div class="custom-margin mx-auto pb-5">
+    <div class="custom-margin pb-5">
         <h4 class="m-4">{{ $totalBlogs }} publicaciones</h4>
         <!-- Tarjetas -->
         <div class="row p-4">

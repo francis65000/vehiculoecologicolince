@@ -8,7 +8,7 @@
         <!--Tarjetas-->
         <div class="row justify-content-center p-4">
             @foreach ($reconocimientos as $reconocimiento)
-                <div class="col-md-3">
+                <div class="col-md-3 mb-4">
                     <div class="card h-100">
                         @foreach ($medios as $medio)
                             @if ($reconocimiento->id_imagen == $medio->id)

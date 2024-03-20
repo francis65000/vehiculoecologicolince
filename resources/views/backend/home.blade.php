@@ -7,7 +7,7 @@
     <div class="container">
         <div class="card">
             <div class="card-body text-center">
-                <h2>Escritorio LinceOS 1.0</h2>
+                <h2>Escritorio LinceOS 1.2.4</h2>
             </div>
         </div>
     </div>
@@ -17,7 +17,7 @@
           <div class="col-md-4">
             <div class="card">
               <div class="card-body">
-                <h2>Últimas entradas</h2>
+                <h2>Últimas Entradas</h2>
                 <table class="table">
                   <thead>
                     <tr>
@@ -42,7 +42,7 @@
           <div class="col-md-4">
             <div class="card">
               <div class="card-body">
-                <h2>Columna 2</h2>
+                <h2>Último Equipo</h2>
               </div>
             </div>
           </div>
@@ -50,7 +50,7 @@
           <div class="col-md-4">
             <div class="card">
               <div class="card-body">
-                <h2>Columna 3</h2>
+                <h2>Próxima Competición</h2>
               </div>
             </div>
           </div>

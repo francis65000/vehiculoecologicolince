@@ -76,15 +76,24 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item ">
+                    <a href="{{url('/configuracion/contador')}}" class="menu-link">
+                        <i class="menu-icon fa-solid fa-clock"></i>
+                        <div data-i18n="Analytics">Contador</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
                     <a href="#" class="menu-link">
+                        <i class="menu-icon fa-solid fa-user"></i>
                         <div data-i18n="Analytics">Usuarios</div>
                     </a>
                 </li>
                 <li class="menu-item ">
                     <a href="#" class="menu-link">
+                        <i class="menu-icon fa-solid fa-circle-info"></i>
                         <div data-i18n="Analytics">Acerca de</div>
                     </a>
                 </li>
+
             </ul>
         </li>
         <li class="menu-item text-center">
