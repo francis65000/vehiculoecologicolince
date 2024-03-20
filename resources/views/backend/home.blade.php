@@ -72,7 +72,7 @@
                             <h3 class="text-center">Shell Eco-Marathon {{ $contador->anio_competicion }}</h3>
                         @endforeach
                         <!--CAJA DEL CONTADOR-->
-                        <div class="btn-primary h2 text-white p-3 rounded m-5 text-center" id="countdown">
+                        <div class="btn-primary h2 text-white p-3 rounded mx-5 text-center" id="countdown">
 
                         </div>
                     </div>

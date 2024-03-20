@@ -14,13 +14,17 @@
                     a tempus purus congue maximus. Vestibulum non lectus nisi. Donec euismod, tortor at fermentum sagittis,
                     tellus neque sollicitudin enim, vitae accumsan sapien turpis id sem. Vivamus vel pretium urna, efficitur
                     dapibus orci.</p>
-                <div class="d-flex justify-content-left align-items-center">
-                    @foreach ($contadores as $contador)
-                        <h3 class="text-center">Shell Eco-Marathon {{ $contador->anio_competicion }}</h3>
-                    @endforeach
-                    <!--CAJA DEL CONTADOR-->
-                    <div class="btn-primary h2 text-white p-3 rounded m-5 text-center" id="countdown">
-
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="justify-content-left align-items-center">
+                            @foreach ($contadores as $contador)
+                                <h3 class="text-center">Shell Eco-Marathon {{ $contador->anio_competicion }}</h3>
+                            @endforeach
+                            <!--CAJA DEL CONTADOR-->
+                            <div class="btn-primary h2 text-white p-3 mx-5 rounded text-center" id="countdown">
+        
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

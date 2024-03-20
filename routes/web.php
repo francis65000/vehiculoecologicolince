@@ -12,6 +12,7 @@ use App\Http\Controllers\MediosController;
 use App\Http\Controllers\PatrocinadoresController;
 use App\Http\Controllers\PilotosController;
 use App\Http\Controllers\ReconocimientosController;
+use App\Http\Controllers\ConfigController;
 use Illuminate\Support\Facades\Route;
 
 /*////////////////////////////////////////////////////////////////////////////////*/
@@ -115,7 +116,8 @@ Route::middleware('auth')->group(function () {
     //USUARIOS
 
     //CONTADOR
-    Route::get('/configuracion/contador', [EscritorioController::class, 'contador'])->name('contador.show');
+    Route::get('/configuracion/contador', [ConfigController::class, 'contador'])->name('contador.show');
+    Route::post('/actualizar-contador/{id}', [ConfigController::class, 'updateContador'])->name('contador.update');
 });
 
 /*////////////////////////////////////////////////////////////////////////////////*/
