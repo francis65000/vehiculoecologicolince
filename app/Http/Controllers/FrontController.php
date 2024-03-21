@@ -13,6 +13,7 @@ use App\Models\Blog;
 use App\Models\Dorsales;
 use App\Models\Contadores;
 
+
 use App\Mail\FormularioEnviado;
 use App\Models\Reconocimientos;
 use Carbon\Carbon;
@@ -50,7 +51,7 @@ class FrontController extends Controller
         $fecha_actual = Carbon::now();
         $blogs = Blog::whereDate('fecha_publicacion', '<=', $fecha_actual)
             ->orderByDesc('fecha_publicacion')
-            ->paginate(10);
+            ->paginate(8);
         $medios = Medios::all();
         $totalBlogs = Blog::count();
         return view('front.blog', compact('medios', 'blogs', 'totalBlogs'));
@@ -111,6 +112,15 @@ class FrontController extends Controller
         $reconocimientos = Reconocimientos::orderBy('id', 'DESC')->paginate(10);
         $medios = Medios::all();
         return view('front.reconocimientos', compact('reconocimientos','medios'));
+    }
+
+    //PÁGINA DE PILOTOS
+    public function verPilotos(Request $request)
+    {
+        //PASAMOS LOS DATOS A LA VISTA
+        $pilotos = Pilotos::orderBy('id', 'DESC')->paginate(8);
+        $medios = Medios::all();
+        return view('front.pilotos', compact('pilotos','medios'));
     }
 
     //PÁGINA DE CONTACTO
